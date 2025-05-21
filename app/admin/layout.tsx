@@ -1,4 +1,4 @@
-import { AdminSidebar } from "@/components/admin/sidebar"
+import Sidebar from "@/components/admin/sidebar"
 
 export default function AdminLayout({
   children,
@@ -7,7 +7,7 @@ export default function AdminLayout({
 }) {
   return (
     <div className="flex h-screen">
-      <AdminSidebar />
+      <Sidebar />
       <main className="flex-1 overflow-y-auto">
         {children}
       </main>
