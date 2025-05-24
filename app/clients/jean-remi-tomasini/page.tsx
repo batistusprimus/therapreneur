@@ -89,38 +89,33 @@ const cardHoverStyles = "transform hover:scale-[1.02] transition-all duration-30
 const buttonHoverStyles = "transform hover:scale-105 transition-all duration-200 ease-in-out";
 const modalAnimationStyles = "animate-fadeIn";
 
-// Ajout d'un composant de chargement
-const LoadingShimmer = () => (
-  <div className="loading-shimmer glass-card rounded-xl p-8 h-48"></div>
-);
-
-// Ajout d'un composant de progression
-const ProgressIndicator = ({ current, total }: { current: number; total: number }) => (
-  <div className="flex justify-center space-x-2 mt-4">
-    {Array.from({ length: total }).map((_, index) => (
-      <div
-        key={index}
-        className={`progress-dot ${index === current ? 'active' : ''}`}
-      />
-    ))}
-  </div>
-);
-
-const renderOnboardingModal = (onClose: () => void) => {
-  const [currentVideo, setCurrentVideo] = useState(0);
-  const videos = (onboardingResources.onboarding as TutorialResource).videos;
+// Composant Modal de base
+const Modal = ({ 
+  isOpen, 
+  onClose, 
+  title, 
+  description, 
+  children 
+}: { 
+  isOpen: boolean; 
+  onClose: () => void; 
+  title: string; 
+  description: string; 
+  children: React.ReactNode;
+}) => {
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
-      <div className="glass rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
         <div className="p-8">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h3 className="text-2xl font-semibold text-accent">
-                Onboarding - Vidéos de bienvenue
+              <h3 className="text-2xl font-semibold text-[#2C3E50]">
+                {title}
               </h3>
               <p className="text-gray-600 mt-1">
-                Découvrez votre espace client étape par étape
+                {description}
               </p>
             </div>
             <button
@@ -130,190 +125,196 @@ const renderOnboardingModal = (onClose: () => void) => {
               <FiX size={24} />
             </button>
           </div>
-
-          <div className="space-y-6">
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                className={`glass rounded-lg p-6 card-hover ${
-                  currentVideo === index ? 'border-accent' : ''
-                }`}
-                onClick={() => setCurrentVideo(index)}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-lg font-medium text-accent">
-                    {video.title}
-                  </h4>
-                  <span className="px-3 py-1 bg-accent text-accent rounded-full text-sm">
-                    Vidéo {index + 1}/{videos.length}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  {video.description}
-                </p>
-                <div className="border-accent rounded-lg overflow-hidden">
-                  <div className="aspect-video bg-gray-50">
-                    <iframe
-                      src={video.url}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-end space-x-3">
-            <button
-              onClick={() => setCurrentVideo(prev => Math.max(0, prev - 1))}
-              disabled={currentVideo === 0}
-              className={`button-primary ${
-                currentVideo === 0 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Précédent
-            </button>
-            <button
-              onClick={() => setCurrentVideo(prev => Math.min(videos.length - 1, prev + 1))}
-              disabled={currentVideo === videos.length - 1}
-              className={`button-primary ${
-                currentVideo === videos.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Suivant
-            </button>
-            <button
-              onClick={onClose}
-              className="button-primary"
-            >
-              Fermer
-            </button>
-          </div>
+          {children}
         </div>
       </div>
     </div>
   );
 };
 
-const renderDiscordModal = (onClose: () => void) => {
+// Composant pour les vidéos d'onboarding
+const OnboardingModal = ({ onClose }: { onClose: () => void }) => {
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const videos = (onboardingResources.onboarding as TutorialResource).videos;
+
+  return (
+    <Modal
+      isOpen={true}
+      onClose={onClose}
+      title="Onboarding - Vidéos de bienvenue"
+      description="Découvrez votre espace client étape par étape"
+    >
+      <div className="space-y-6">
+        {videos.map((video, index) => (
+          <div
+            key={index}
+            className={`bg-white rounded-lg p-6 shadow-sm border-2 ${
+              currentVideo === index ? 'border-[#2C3E50]' : 'border-transparent'
+            } hover:shadow-md transition-all duration-200`}
+            onClick={() => setCurrentVideo(index)}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-lg font-medium text-[#2C3E50]">
+                {video.title}
+              </h4>
+              <span className="px-3 py-1 bg-[#2C3E50] text-white rounded-full text-sm">
+                Vidéo {index + 1}/{videos.length}
+              </span>
+            </div>
+            <p className="text-gray-600 mb-4">
+              {video.description}
+            </p>
+            <div className="border-2 border-[#2C3E50] rounded-lg overflow-hidden">
+              <div className="aspect-video bg-gray-50">
+                <iframe
+                  src={video.url}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8 flex justify-end space-x-3">
+        <button
+          onClick={() => setCurrentVideo(prev => Math.max(0, prev - 1))}
+          disabled={currentVideo === 0}
+          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
+            currentVideo === 0 ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          Précédent
+        </button>
+        <button
+          onClick={() => setCurrentVideo(prev => Math.min(videos.length - 1, prev + 1))}
+          disabled={currentVideo === videos.length - 1}
+          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
+            currentVideo === videos.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          Suivant
+        </button>
+        <button
+          onClick={onClose}
+          className="px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors"
+        >
+          Fermer
+        </button>
+      </div>
+    </Modal>
+  );
+};
+
+// Composant pour le protocole Discord
+const DiscordModal = ({ onClose }: { onClose: () => void }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
     {
       title: "Accéder à Discord",
       description: "Téléchargez Discord sur votre ordinateur ou utilisez la version web sur discord.com",
-      video: (onboardingResources.discord as TutorialResource).videos[0]
+      video: (onboardingResources.discord as TutorialResource).videos[0],
+      items: [
+        "Téléchargez Discord sur votre ordinateur",
+        "Ou utilisez la version web sur discord.com",
+        "Utilisez le lien d'invitation qui vous a été envoyé par email"
+      ]
     },
     {
       title: "Rejoindre et participer",
       description: "Guide pour participer à la communauté",
       video: (onboardingResources.discord as TutorialResource).videos[1],
       items: [
-        "Utilisez le lien d'invitation qui vous a été envoyé par email",
         "Rendez-vous dans le canal #présentations pour vous présenter",
         "Découvrez les différents canaux thématiques",
-        "N'hésitez pas à poser vos questions et à partager vos expériences"
+        "N'hésitez pas à poser vos questions",
+        "Partagez vos expériences avec la communauté"
       ]
     }
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
-      <div className="glass rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-8">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h3 className="text-2xl font-semibold text-accent">
-                Protocole Discord
-              </h3>
-              <p className="text-gray-600 mt-1">
-                Guide complet pour utiliser notre espace communautaire
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100/80 focus-visible"
-            >
-              <FiX size={24} />
-            </button>
-          </div>
-
-          <div className="space-y-6">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className={`glass rounded-lg p-6 card-hover ${
-                  currentStep === index ? 'border-accent' : ''
-                }`}
-                onClick={() => setCurrentStep(index)}
-              >
-                <h4 className="text-lg font-medium text-accent mb-4 flex items-center">
-                  <span className="w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-3">
-                    <span className="text-accent font-medium text-sm">{index + 1}</span>
-                  </span>
-                  {step.title}
-                </h4>
-                <p className="text-gray-600 mb-4">
-                  {step.description}
-                </p>
-                {step.items && (
-                  <div className="space-y-3 mb-4">
-                    {step.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-0.5">
-                          <span className="text-accent text-xs font-medium">{itemIndex + 1}</span>
-                        </div>
-                        <p className="text-gray-600">{item}</p>
-                      </div>
-                    ))}
+    <Modal
+      isOpen={true}
+      onClose={onClose}
+      title="Protocole Discord"
+      description="Guide complet pour utiliser notre espace communautaire"
+    >
+      <div className="space-y-6">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`bg-white rounded-lg p-6 shadow-sm border-2 ${
+              currentStep === index ? 'border-[#2C3E50]' : 'border-transparent'
+            } hover:shadow-md transition-all duration-200`}
+            onClick={() => setCurrentStep(index)}
+          >
+            <h4 className="text-lg font-medium text-[#2C3E50] mb-4 flex items-center">
+              <span className="w-8 h-8 bg-[#2C3E50] text-white rounded-full flex items-center justify-center mr-3">
+                <span className="font-medium text-sm">{index + 1}</span>
+              </span>
+              {step.title}
+            </h4>
+            <p className="text-gray-600 mb-4">
+              {step.description}
+            </p>
+            {step.items && (
+              <div className="space-y-3 mb-4">
+                {step.items.map((item, itemIndex) => (
+                  <div key={itemIndex} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#2C3E50] text-white rounded-full flex items-center justify-center mt-0.5">
+                      <span className="text-xs font-medium">{itemIndex + 1}</span>
+                    </div>
+                    <p className="text-gray-600">{item}</p>
                   </div>
-                )}
-                <div className="border-accent rounded-lg overflow-hidden">
-                  <div className="aspect-video bg-gray-50">
-                    <iframe
-                      src={step.video.url}
-                      title={step.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            )}
+            <div className="border-2 border-[#2C3E50] rounded-lg overflow-hidden">
+              <div className="aspect-video bg-gray-50">
+                <iframe
+                  src={step.video.url}
+                  title={step.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
           </div>
-
-          <div className="mt-8 flex justify-end space-x-3">
-            <button
-              onClick={() => setCurrentStep(prev => Math.max(0, prev - 1))}
-              disabled={currentStep === 0}
-              className={`button-primary ${
-                currentStep === 0 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Précédent
-            </button>
-            <button
-              onClick={() => setCurrentStep(prev => Math.min(steps.length - 1, prev + 1))}
-              disabled={currentStep === steps.length - 1}
-              className={`button-primary ${
-                currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Suivant
-            </button>
-            <button
-              onClick={onClose}
-              className="button-primary"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+
+      <div className="mt-8 flex justify-end space-x-3">
+        <button
+          onClick={() => setCurrentStep(prev => Math.max(0, prev - 1))}
+          disabled={currentStep === 0}
+          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
+            currentStep === 0 ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          Précédent
+        </button>
+        <button
+          onClick={() => setCurrentStep(prev => Math.min(steps.length - 1, prev + 1))}
+          disabled={currentStep === steps.length - 1}
+          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
+            currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
+        >
+          Suivant
+        </button>
+        <button
+          onClick={onClose}
+          className="px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors"
+        >
+          Fermer
+        </button>
+      </div>
+    </Modal>
   );
 };
 
@@ -512,8 +513,8 @@ export default function ClientPage() {
       </div>
 
       {/* Modals */}
-      {showOnboardingTutorial && renderOnboardingModal(() => setShowOnboardingTutorial(false))}
-      {showDiscordTutorial && renderDiscordModal(() => setShowDiscordTutorial(false))}
+      {showOnboardingTutorial && <OnboardingModal onClose={() => setShowOnboardingTutorial(false)} />}
+      {showDiscordTutorial && <DiscordModal onClose={() => setShowDiscordTutorial(false)} />}
     </div>
   );
 } 
