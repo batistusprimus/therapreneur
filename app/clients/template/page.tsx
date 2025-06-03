@@ -20,7 +20,22 @@ interface BaseResource {
 
 interface TutorialResource extends BaseResource {
   type: 'tutorial';
-  videos: Video[];
+  content: {
+    dashboard: {
+      title: string;
+      sections: Array<{
+        title: string;
+        content: string;
+      }>;
+    };
+    masterclass: {
+      title: string;
+      sections: Array<{
+        title: string;
+        content: string;
+      }>;
+    };
+  };
 }
 
 interface DocumentResource extends BaseResource {
@@ -45,39 +60,45 @@ const demoClientInfo = {
 const onboardingResources: Record<string, Resource> = {
   onboarding: {
     title: "Onboarding",
-    description: "Vidéos de bienvenue et processus d'intégration",
+    description: "Guide d'utilisation de votre espace client",
     icon: FiBook,
     type: "tutorial",
-    videos: [
-      {
-        title: "Bienvenue dans Thérapreneur",
-        url: "https://www.youtube.com/embed/VIDEO_ID_1",
-        description: "Découvrez votre espace client et les prochaines étapes"
+    content: {
+      dashboard: {
+        title: "Votre Dashboard",
+        sections: [
+          {
+            title: "Navigation",
+            content: "Votre espace client est organisé en plusieurs sections principales : les ressources d'onboarding, les documents partagés, et vos informations personnelles. Utilisez la barre de navigation en haut pour accéder rapidement à la Masterclass."
+          },
+          {
+            title: "Documents",
+            content: "Tous vos documents importants sont centralisés dans la section 'Documents partagés'. Vous y trouverez votre plan de suivi, vos notes de séance, et les documents stratégiques de votre développement."
+          },
+          {
+            title: "Ressources",
+            content: "La section 'Ressources d'Onboarding' contient tous les guides et tutoriels nécessaires pour bien démarrer. Consultez-les régulièrement pour tirer le meilleur parti de votre accompagnement."
+          }
+        ]
       },
-      {
-        title: "Comment utiliser votre espace",
-        url: "https://www.youtube.com/embed/VIDEO_ID_2",
-        description: "Guide d'utilisation de votre espace client"
+      masterclass: {
+        title: "La Masterclass",
+        sections: [
+          {
+            title: "Objectif",
+            content: "La Masterclass Thérapreneur est votre formation complète pour transformer votre pratique thérapeutique en entreprise florissante. Elle combine stratégie business, marketing et développement personnel."
+          },
+          {
+            title: "Contenu",
+            content: "Vous accédez à des modules progressifs couvrant : la définition de votre cible, la structuration de votre offre, votre branding, et les stratégies de croissance. Chaque module inclut des exercices pratiques et des ressources complémentaires."
+          },
+          {
+            title: "Accès",
+            content: "Cliquez sur le bouton 'Accéder à la Masterclass' en haut de votre dashboard pour rejoindre la formation. Vous pouvez suivre les modules à votre rythme et revenir sur les contenus à tout moment."
+          }
+        ]
       }
-    ]
-  },
-  discord: {
-    title: "Protocole Discord",
-    description: "Guide d'utilisation de notre espace communautaire",
-    icon: FiMessageSquare,
-    type: "tutorial",
-    videos: [
-      {
-        title: "Accéder et rejoindre Discord",
-        url: "https://www.youtube.com/embed/VIDEO_ID_3",
-        description: "Téléchargez Discord sur votre ordinateur ou utilisez la version web sur discord.com. Utilisez le lien d'invitation qui vous a été envoyé par email."
-      },
-      {
-        title: "Participer à la communauté",
-        url: "https://www.youtube.com/embed/VIDEO_ID_4",
-        description: "Rendez-vous dans le canal #présentations pour vous présenter à la communauté. Découvrez les différents canaux thématiques et les ressources disponibles. N'hésitez pas à poser vos questions et à partager vos expériences."
-      }
-    ]
+    }
   },
   cible: {
     title: "Cible",
@@ -124,9 +145,10 @@ const ProgressIndicator = ({ current, total }: { current: number; total: number 
   </div>
 );
 
-const renderOnboardingModal = (onClose: () => void) => {
-  const [currentVideo, setCurrentVideo] = useState(0);
-  const videos = (onboardingResources.onboarding as TutorialResource).videos;
+// Composant Modal d'Onboarding
+const OnboardingModal = ({ onClose }: { onClose: () => void }) => {
+  const [activeSection, setActiveSection] = useState<'dashboard' | 'masterclass'>('dashboard');
+  const content = (onboardingResources.onboarding as TutorialResource).content;
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
@@ -135,10 +157,10 @@ const renderOnboardingModal = (onClose: () => void) => {
           <div className="flex justify-between items-center mb-8">
             <div>
               <h3 className="text-2xl font-semibold text-accent">
-                Onboarding - Vidéos de bienvenue
+                Guide d'Onboarding
               </h3>
               <p className="text-gray-600 mt-1">
-                Découvrez votre espace client étape par étape
+                Découvrez votre espace client et la Masterclass
               </p>
             </div>
             <button
@@ -149,179 +171,46 @@ const renderOnboardingModal = (onClose: () => void) => {
             </button>
           </div>
 
-          <div className="space-y-6">
-            {videos.map((video, index) => (
-              <div
-                key={index}
-                className={`glass rounded-lg p-6 card-hover ${
-                  currentVideo === index ? 'border-accent' : ''
-                }`}
-                onClick={() => setCurrentVideo(index)}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-lg font-medium text-accent">
-                    {video.title}
-                  </h4>
-                  <span className="px-3 py-1 bg-accent text-accent rounded-full text-sm">
-                    Vidéo {index + 1}/{videos.length}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  {video.description}
-                </p>
-                <div className="border-accent rounded-lg overflow-hidden">
-                  <div className="aspect-video bg-gray-50">
-                    <iframe
-                      src={video.url}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-end space-x-3">
+          <div className="flex space-x-4 mb-8">
             <button
-              onClick={() => setCurrentVideo(prev => Math.max(0, prev - 1))}
-              disabled={currentVideo === 0}
-              className={`button-primary ${
-                currentVideo === 0 ? 'opacity-50 cursor-not-allowed' : ''
+              onClick={() => setActiveSection('dashboard')}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                activeSection === 'dashboard'
+                  ? 'bg-accent text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              Précédent
+              Dashboard
             </button>
             <button
-              onClick={() => setCurrentVideo(prev => Math.min(videos.length - 1, prev + 1))}
-              disabled={currentVideo === videos.length - 1}
-              className={`button-primary ${
-                currentVideo === videos.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+              onClick={() => setActiveSection('masterclass')}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                activeSection === 'masterclass'
+                  ? 'bg-accent text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              Suivant
-            </button>
-            <button
-              onClick={onClose}
-              className="button-primary"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const renderDiscordModal = (onClose: () => void) => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const steps = [
-    {
-      title: "Accéder à Discord",
-      description: "Téléchargez Discord sur votre ordinateur ou utilisez la version web sur discord.com",
-      video: (onboardingResources.discord as TutorialResource).videos[0]
-    },
-    {
-      title: "Rejoindre et participer",
-      description: "Guide pour participer à la communauté",
-      video: (onboardingResources.discord as TutorialResource).videos[1],
-      items: [
-        "Utilisez le lien d'invitation qui vous a été envoyé par email",
-        "Rendez-vous dans le canal #présentations pour vous présenter",
-        "Découvrez les différents canaux thématiques",
-        "N'hésitez pas à poser vos questions et à partager vos expériences"
-      ]
-    }
-  ];
-
-  return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
-      <div className="glass rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-8">
-          <div className="flex justify-between items-center mb-8">
-            <div>
-              <h3 className="text-2xl font-semibold text-accent">
-                Protocole Discord
-              </h3>
-              <p className="text-gray-600 mt-1">
-                Guide complet pour utiliser notre espace communautaire
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              className="p-2 text-gray-500 hover:text-gray-700 rounded-full hover:bg-gray-100/80 focus-visible"
-            >
-              <FiX size={24} />
+              Masterclass
             </button>
           </div>
 
           <div className="space-y-6">
-            {steps.map((step, index) => (
+            {content[activeSection].sections.map((section, index) => (
               <div
                 key={index}
-                className={`glass rounded-lg p-6 card-hover ${
-                  currentStep === index ? 'border-accent' : ''
-                }`}
-                onClick={() => setCurrentStep(index)}
+                className="glass rounded-lg p-6 card-hover"
               >
-                <h4 className="text-lg font-medium text-accent mb-4 flex items-center">
-                  <span className="w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-3">
-                    <span className="text-accent font-medium text-sm">{index + 1}</span>
-                  </span>
-                  {step.title}
+                <h4 className="text-lg font-medium text-accent mb-3">
+                  {section.title}
                 </h4>
-                <p className="text-gray-600 mb-4">
-                  {step.description}
+                <p className="text-gray-600">
+                  {section.content}
                 </p>
-                {step.items && (
-                  <div className="space-y-3 mb-4">
-                    {step.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-0.5">
-                          <span className="text-accent text-xs font-medium">{itemIndex + 1}</span>
-                        </div>
-                        <p className="text-gray-600">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <div className="border-accent rounded-lg overflow-hidden">
-                  <div className="aspect-video bg-gray-50">
-                    <iframe
-                      src={step.video.url}
-                      title={step.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 flex justify-end space-x-3">
-            <button
-              onClick={() => setCurrentStep(prev => Math.max(0, prev - 1))}
-              disabled={currentStep === 0}
-              className={`button-primary ${
-                currentStep === 0 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Précédent
-            </button>
-            <button
-              onClick={() => setCurrentStep(prev => Math.min(steps.length - 1, prev + 1))}
-              disabled={currentStep === steps.length - 1}
-              className={`button-primary ${
-                currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              Suivant
-            </button>
+          <div className="mt-8 flex justify-end">
             <button
               onClick={onClose}
               className="button-primary"
@@ -337,7 +226,6 @@ const renderDiscordModal = (onClose: () => void) => {
 
 export default function ClientTemplatePage() {
   const [showOnboardingTutorial, setShowOnboardingTutorial] = useState(false);
-  const [showDiscordTutorial, setShowDiscordTutorial] = useState(false);
   const router = useRouter();
 
   return (
@@ -427,17 +315,15 @@ export default function ClientTemplatePage() {
                         onClick={() => {
                           if (key === 'onboarding') {
                             setShowOnboardingTutorial(true);
-                          } else if (key === 'discord') {
-                            setShowDiscordTutorial(true);
                           }
                         }}
                         className="button-primary focus-visible"
                       >
                         <div className="flex items-center">
                           <div className="mr-2">
-                            <FiVideo size={18} />
+                            <FiBook size={18} />
                           </div>
-                          Voir les vidéos
+                          Voir le guide
                         </div>
                       </button>
                     ) : (
@@ -530,8 +416,7 @@ export default function ClientTemplatePage() {
       </div>
 
       {/* Modals */}
-      {showOnboardingTutorial && renderOnboardingModal(() => setShowOnboardingTutorial(false))}
-      {showDiscordTutorial && renderDiscordModal(() => setShowDiscordTutorial(false))}
+      {showOnboardingTutorial && <OnboardingModal onClose={() => setShowOnboardingTutorial(false)} />}
     </div>
   );
 } 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 // Types pour notre masterclass
 interface Palier {
@@ -71,51 +72,35 @@ const masterclassContent: MasterclassContent = {
   modules: [
     {
       id: 0,
-      title: "Introduction",
-      description: "Comprendre comment fonctionne le programme",
+      title: "Mindset & Fondamentaux",
+      description: "Adopte le bon état d'esprit pour réussir en tant que thérapeute digital",
       icon: "🧠",
       color: "#9F99EB",
-      workbookUrl: "/workbooks/module-0.pdf",
+      workbookUrl: "/workbook/0-mindset.pdf",
       parts: [
         {
           id: "0.1",
-          title: "Présentation du programme",
+          title: "Bienvenue dans la formation",
           description: "Découvrez les objectifs et la structure de la formation",
-          videoUrl: "/videos/0-1-presentation.mp4",
-          pdfUrl: "/pdfs/0-1-presentation.pdf",
+          videoUrl: "/videos/0-1-bienvenue.mp4",
+          pdfUrl: "/pdfs/0-1-bienvenue.pdf",
           order: 1
         },
         {
           id: "0.2",
-          title: "Méthodologie",
-          description: "Comprendre l'approche pédagogique",
-          videoUrl: "/videos/0-2-methodologie.mp4",
-          pdfUrl: "/pdfs/0-2-methodologie.pdf",
+          title: "Le mindset du thérapeute digital",
+          description: "Comprendre l'état d'esprit nécessaire pour réussir",
+          videoUrl: "/videos/0-2-mindset.mp4",
+          pdfUrl: "/pdfs/0-2-mindset.pdf",
           order: 2
         },
         {
           id: "0.3",
-          title: "Outils et ressources",
-          description: "Découvrir les outils mis à disposition",
-          videoUrl: "/videos/0-3-outils.mp4",
-          pdfUrl: "/pdfs/0-3-outils.pdf",
+          title: "Les fondamentaux du business digital",
+          description: "Maîtriser les bases essentielles du business en ligne",
+          videoUrl: "/videos/0-3-fondamentaux.mp4",
+          pdfUrl: "/pdfs/0-3-fondamentaux.pdf",
           order: 3
-        },
-        {
-          id: "0.4",
-          title: "Planning de formation",
-          description: "Organiser son parcours d'apprentissage",
-          videoUrl: "/videos/0-4-planning.mp4",
-          pdfUrl: "/pdfs/0-4-planning.pdf",
-          order: 4
-        },
-        {
-          id: "0.5",
-          title: "Objectifs personnels",
-          description: "Définir ses objectifs de formation",
-          videoUrl: "/videos/0-5-objectifs.mp4",
-          pdfUrl: "/pdfs/0-5-objectifs.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -137,51 +122,43 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 1,
-      title: "Clarté",
-      description: "Définir la vision, la cible et la posture du thérapeute digital",
-      icon: "🎯",
+      title: "Offre Irrésistible",
+      description: "Crée une offre digitale qui se vend toute seule",
+      icon: "💎",
       color: "#FF9800",
-      workbookUrl: "/workbooks/module-1.pdf",
+      workbookUrl: "/workbook/1-offre-irresistible.pdf",
       parts: [
         {
           id: "1.1",
-          title: "Vision et mission",
-          description: "Définir sa vision et sa mission en tant que thérapeute digital",
-          videoUrl: "/videos/1-1-vision.mp4",
-          pdfUrl: "/pdfs/1-1-vision.pdf",
+          title: "La structure d'une offre irrésistible",
+          description: "Comprendre les éléments clés d'une offre qui convertit",
+          videoUrl: "/videos/1-1-structure.mp4",
+          pdfUrl: "/pdfs/1-1-structure.pdf",
           order: 1
         },
         {
           id: "1.2",
-          title: "Positionnement",
-          description: "Identifier son positionnement unique sur le marché",
-          videoUrl: "/videos/1-2-positionnement.mp4",
-          pdfUrl: "/pdfs/1-2-positionnement.pdf",
+          title: "La promesse de valeur",
+          description: "Créer une promesse qui fait mouche",
+          videoUrl: "/videos/1-2-promesse.mp4",
+          pdfUrl: "/pdfs/1-2-promesse.pdf",
           order: 2
         },
         {
           id: "1.3",
-          title: "Cible idéale",
-          description: "Définir son client idéal et ses problématiques",
-          videoUrl: "/videos/1-3-cible.mp4",
-          pdfUrl: "/pdfs/1-3-cible.pdf",
+          title: "Le packaging de l'offre",
+          description: "Emballer son offre de manière attractive",
+          videoUrl: "/videos/1-3-packaging.mp4",
+          pdfUrl: "/pdfs/1-3-packaging.pdf",
           order: 3
         },
         {
           id: "1.4",
-          title: "Posture digitale",
-          description: "Adopter la bonne posture en ligne",
-          videoUrl: "/videos/1-4-posture.mp4",
-          pdfUrl: "/pdfs/1-4-posture.pdf",
+          title: "La tarification stratégique",
+          description: "Définir sa stratégie de prix optimale",
+          videoUrl: "/videos/1-4-tarification.mp4",
+          pdfUrl: "/pdfs/1-4-tarification.pdf",
           order: 4
-        },
-        {
-          id: "1.5",
-          title: "Objectifs business",
-          description: "Définir ses objectifs business concrets",
-          videoUrl: "/videos/1-5-objectifs.mp4",
-          pdfUrl: "/pdfs/1-5-objectifs.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -219,51 +196,43 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 2,
-      title: "Offre",
-      description: "Créer une offre digitale claire et alignée",
-      icon: "💡",
+      title: "Acquisition Client",
+      description: "Maîtrise les stratégies d'acquisition qui fonctionnent en B2B",
+      icon: "🎯",
       color: "#4CAF50",
-      workbookUrl: "/workbooks/module-2.pdf",
+      workbookUrl: "/workbook/2-acquisition.pdf",
       parts: [
         {
           id: "2.1",
-          title: "Structure d'offre",
-          description: "Comprendre la structure d'une offre digitale efficace",
-          videoUrl: "/videos/2-1-structure.mp4",
-          pdfUrl: "/pdfs/2-1-structure.pdf",
+          title: "Les canaux d'acquisition B2B",
+          description: "Identifier les meilleurs canaux pour votre business",
+          videoUrl: "/videos/2-1-canaux.mp4",
+          pdfUrl: "/pdfs/2-1-canaux.pdf",
           order: 1
         },
         {
           id: "2.2",
-          title: "Promesse de valeur",
-          description: "Créer une promesse de valeur percutante",
-          videoUrl: "/videos/2-2-promesse.mp4",
-          pdfUrl: "/pdfs/2-2-promesse.pdf",
+          title: "LinkedIn : le réseau B2B par excellence",
+          description: "Maîtriser LinkedIn pour l'acquisition B2B",
+          videoUrl: "/videos/2-2-linkedin.mp4",
+          pdfUrl: "/pdfs/2-2-linkedin.pdf",
           order: 2
         },
         {
           id: "2.3",
-          title: "Méthodologie",
-          description: "Structurer sa méthodologie de travail",
-          videoUrl: "/videos/2-3-methodologie.mp4",
-          pdfUrl: "/pdfs/2-3-methodologie.pdf",
+          title: "Les publicités B2B",
+          description: "Créer des campagnes publicitaires B2B efficaces",
+          videoUrl: "/videos/2-3-pub.mp4",
+          pdfUrl: "/pdfs/2-3-pub.pdf",
           order: 3
         },
         {
           id: "2.4",
-          title: "Tarification",
-          description: "Définir sa stratégie de tarification",
-          videoUrl: "/videos/2-4-tarification.mp4",
-          pdfUrl: "/pdfs/2-4-tarification.pdf",
+          title: "Le networking digital",
+          description: "Construire son réseau professionnel en ligne",
+          videoUrl: "/videos/2-4-networking.mp4",
+          pdfUrl: "/pdfs/2-4-networking.pdf",
           order: 4
-        },
-        {
-          id: "2.5",
-          title: "Packaging",
-          description: "Emballer son offre de manière attractive",
-          videoUrl: "/videos/2-5-packaging.mp4",
-          pdfUrl: "/pdfs/2-5-packaging.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -301,51 +270,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 3,
-      title: "Acquisition Organique",
-      description: "Poser les bases d'un écosystème de contenu simple",
-      icon: "📣",
-      color: "#2196F3",
-      workbookUrl: "/workbooks/module-3.pdf",
+      title: "Newsletter & Communauté",
+      description: "Apprends à créer et animer une communauté engagée autour de ta marque",
+      icon: "📢",
+      color: "#9F99EB",
+      workbookUrl: "/workbook/3-newsletter-communaute.pdf",
       parts: [
         {
           id: "3.1",
-          title: "Stratégie de contenu",
-          description: "Définir sa stratégie de contenu",
+          title: "La stratégie de newsletter",
+          description: "Créer une newsletter qui engage",
           videoUrl: "/videos/3-1-strategie.mp4",
           pdfUrl: "/pdfs/3-1-strategie.pdf",
           order: 1
         },
         {
           id: "3.2",
-          title: "Création de contenu",
-          description: "Apprendre à créer du contenu engageant",
+          title: "La création de contenu",
+          description: "Produire du contenu de qualité régulièrement",
           videoUrl: "/videos/3-2-creation.mp4",
           pdfUrl: "/pdfs/3-2-creation.pdf",
           order: 2
         },
         {
           id: "3.3",
-          title: "Distribution",
-          description: "Optimiser la distribution de son contenu",
-          videoUrl: "/videos/3-3-distribution.mp4",
-          pdfUrl: "/pdfs/3-3-distribution.pdf",
+          title: "L'animation de communauté",
+          description: "Animer et faire grandir sa communauté",
+          videoUrl: "/videos/3-3-animation.mp4",
+          pdfUrl: "/pdfs/3-3-animation.pdf",
           order: 3
-        },
-        {
-          id: "3.4",
-          title: "Engagement",
-          description: "Augmenter l'engagement sur ses contenus",
-          videoUrl: "/videos/3-4-engagement.mp4",
-          pdfUrl: "/pdfs/3-4-engagement.pdf",
-          order: 4
-        },
-        {
-          id: "3.5",
-          title: "Mesure et optimisation",
-          description: "Mesurer et optimiser ses performances",
-          videoUrl: "/videos/3-5-mesure.mp4",
-          pdfUrl: "/pdfs/3-5-mesure.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -383,51 +336,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 4,
-      title: "Acquisition Payante",
-      description: "Préparer et lancer sa première campagne",
-      icon: "🚀",
-      color: "#E91E63",
-      workbookUrl: "/workbooks/module-4.pdf",
+      title: "Éducation des Prospects",
+      description: "Apprends à éduquer tes prospects pour les transformer en clients",
+      icon: "🎓",
+      color: "#9F99EB",
+      workbookUrl: "/workbook/4-eduquer-prospects.pdf",
       parts: [
         {
           id: "4.1",
-          title: "Fondamentaux des publicités",
-          description: "Comprendre les bases de la publicité en ligne",
-          videoUrl: "/videos/4-1-fondamentaux.mp4",
-          pdfUrl: "/pdfs/4-1-fondamentaux.pdf",
+          title: "Le parcours d'éducation",
+          description: "Structurer le parcours d'éducation des prospects",
+          videoUrl: "/videos/4-1-parcours.mp4",
+          pdfUrl: "/pdfs/4-1-parcours.pdf",
           order: 1
         },
         {
           id: "4.2",
-          title: "Création de campagne",
-          description: "Créer sa première campagne publicitaire",
-          videoUrl: "/videos/4-2-campagne.mp4",
-          pdfUrl: "/pdfs/4-2-campagne.pdf",
+          title: "Le contenu éducatif",
+          description: "Créer du contenu qui éduque et convertit",
+          videoUrl: "/videos/4-2-contenu.mp4",
+          pdfUrl: "/pdfs/4-2-contenu.pdf",
           order: 2
         },
         {
           id: "4.3",
-          title: "Ciblage",
-          description: "Maîtriser le ciblage publicitaire",
-          videoUrl: "/videos/4-3-ciblage.mp4",
-          pdfUrl: "/pdfs/4-3-ciblage.pdf",
+          title: "Les webinaires",
+          description: "Organiser des webinaires qui convertissent",
+          videoUrl: "/videos/4-3-webinaires.mp4",
+          pdfUrl: "/pdfs/4-3-webinaires.pdf",
           order: 3
-        },
-        {
-          id: "4.4",
-          title: "Créatifs",
-          description: "Créer des visuels et copies efficaces",
-          videoUrl: "/videos/4-4-creatifs.mp4",
-          pdfUrl: "/pdfs/4-4-creatifs.pdf",
-          order: 4
-        },
-        {
-          id: "4.5",
-          title: "Optimisation",
-          description: "Optimiser ses campagnes publicitaires",
-          videoUrl: "/videos/4-5-optimisation.mp4",
-          pdfUrl: "/pdfs/4-5-optimisation.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -469,51 +406,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 5,
-      title: "Conversion",
-      description: "Structurer les appels de vente et scripts",
-      icon: "💬",
-      color: "#9C27B0",
-      workbookUrl: "/workbooks/module-5.pdf",
+      title: "L'art du VSL",
+      description: "Maîtrise l'art du VSL pour convertir tes prospects en clients",
+      icon: "🎥",
+      color: "#9F99EB",
+      workbookUrl: "/workbook/5-art-vsl.pdf",
       parts: [
         {
           id: "5.1",
-          title: "Processus de vente",
-          description: "Comprendre le processus de vente",
-          videoUrl: "/videos/5-1-processus.mp4",
-          pdfUrl: "/pdfs/5-1-processus.pdf",
+          title: "La structure du VSL",
+          description: "Comprendre la structure d'un VSL qui convertit",
+          videoUrl: "/videos/5-1-structure.mp4",
+          pdfUrl: "/pdfs/5-1-structure.pdf",
           order: 1
         },
         {
           id: "5.2",
-          title: "Script de vente",
-          description: "Créer son script de vente",
+          title: "Le script de VSL",
+          description: "Écrire un script de VSL percutant",
           videoUrl: "/videos/5-2-script.mp4",
           pdfUrl: "/pdfs/5-2-script.pdf",
           order: 2
         },
         {
           id: "5.3",
-          title: "Objections",
-          description: "Gérer les objections",
-          videoUrl: "/videos/5-3-objections.mp4",
-          pdfUrl: "/pdfs/5-3-objections.pdf",
+          title: "La production du VSL",
+          description: "Produire un VSL professionnel",
+          videoUrl: "/videos/5-3-production.mp4",
+          pdfUrl: "/pdfs/5-3-production.pdf",
           order: 3
-        },
-        {
-          id: "5.4",
-          title: "Clôture",
-          description: "Maîtriser la clôture de vente",
-          videoUrl: "/videos/5-4-cloture.mp4",
-          pdfUrl: "/pdfs/5-4-cloture.pdf",
-          order: 4
-        },
-        {
-          id: "5.5",
-          title: "Suivi",
-          description: "Assurer le suivi post-appel",
-          videoUrl: "/videos/5-5-suivi.mp4",
-          pdfUrl: "/pdfs/5-5-suivi.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -555,51 +476,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 6,
-      title: "Livraison",
-      description: "Poser les bases de l'expérience client",
+      title: "Livraison & Expérience Client",
+      description: "Crée une expérience client exceptionnelle qui fidélise",
       icon: "📦",
       color: "#FFC107",
-      workbookUrl: "/workbooks/module-6.pdf",
+      workbookUrl: "/workbook/6-livraison.pdf",
       parts: [
         {
           id: "6.1",
-          title: "Onboarding",
-          description: "Créer un onboarding efficace",
+          title: "L'onboarding client",
+          description: "Créer un onboarding qui rassure et engage",
           videoUrl: "/videos/6-1-onboarding.mp4",
           pdfUrl: "/pdfs/6-1-onboarding.pdf",
           order: 1
         },
         {
           id: "6.2",
-          title: "Suivi client",
-          description: "Mettre en place le suivi client",
+          title: "Le suivi client",
+          description: "Mettre en place un suivi client efficace",
           videoUrl: "/videos/6-2-suivi.mp4",
           pdfUrl: "/pdfs/6-2-suivi.pdf",
           order: 2
         },
         {
           id: "6.3",
-          title: "Outils de suivi",
-          description: "Choisir ses outils de suivi",
-          videoUrl: "/videos/6-3-outils.mp4",
-          pdfUrl: "/pdfs/6-3-outils.pdf",
+          title: "La satisfaction client",
+          description: "Mesurer et améliorer la satisfaction client",
+          videoUrl: "/videos/6-3-satisfaction.mp4",
+          pdfUrl: "/pdfs/6-3-satisfaction.pdf",
           order: 3
-        },
-        {
-          id: "6.4",
-          title: "Feedback",
-          description: "Collecter et utiliser les feedbacks",
-          videoUrl: "/videos/6-4-feedback.mp4",
-          pdfUrl: "/pdfs/6-4-feedback.pdf",
-          order: 4
-        },
-        {
-          id: "6.5",
-          title: "Amélioration continue",
-          description: "Mettre en place l'amélioration continue",
-          videoUrl: "/videos/6-5-amelioration.mp4",
-          pdfUrl: "/pdfs/6-5-amelioration.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -637,51 +542,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 7,
-      title: "Croissance",
-      description: "Mettre en place le pilotage mensuel",
+      title: "Croissance & Pilotage",
+      description: "Mets en place les KPIs et le pilotage de ton business",
       icon: "📈",
       color: "#673AB7",
-      workbookUrl: "/workbooks/module-7.pdf",
+      workbookUrl: "/workbook/7-croissance.pdf",
       parts: [
         {
           id: "7.1",
-          title: "KPIs",
-          description: "Définir ses indicateurs clés",
+          title: "Les KPIs essentiels",
+          description: "Identifier et suivre les KPIs clés",
           videoUrl: "/videos/7-1-kpis.mp4",
           pdfUrl: "/pdfs/7-1-kpis.pdf",
           order: 1
         },
         {
           id: "7.2",
-          title: "Tableau de bord",
-          description: "Créer son tableau de bord",
+          title: "Le tableau de bord",
+          description: "Créer un tableau de bord efficace",
           videoUrl: "/videos/7-2-dashboard.mp4",
           pdfUrl: "/pdfs/7-2-dashboard.pdf",
           order: 2
         },
         {
           id: "7.3",
-          title: "Analyse",
-          description: "Analyser ses performances",
+          title: "L'analyse des performances",
+          description: "Analyser et optimiser ses performances",
           videoUrl: "/videos/7-3-analyse.mp4",
           pdfUrl: "/pdfs/7-3-analyse.pdf",
           order: 3
-        },
-        {
-          id: "7.4",
-          title: "Objectifs",
-          description: "Fixer et suivre ses objectifs",
-          videoUrl: "/videos/7-4-objectifs.mp4",
-          pdfUrl: "/pdfs/7-4-objectifs.pdf",
-          order: 4
-        },
-        {
-          id: "7.5",
-          title: "Ajustements",
-          description: "Ajuster sa stratégie",
-          videoUrl: "/videos/7-5-ajustements.mp4",
-          pdfUrl: "/pdfs/7-5-ajustements.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -719,51 +608,35 @@ const masterclassContent: MasterclassContent = {
     },
     {
       id: 8,
-      title: "Optimisation",
-      description: "Préparer les étapes d'après : délégation, automatisation",
+      title: "Optimisation & Délégation",
+      description: "Prépare ton business à l'échelle avec la délégation et l'automatisation",
       icon: "🔁",
       color: "#607D8B",
-      workbookUrl: "/workbooks/module-8.pdf",
+      workbookUrl: "/workbook/8-optimisation.pdf",
       parts: [
         {
           id: "8.1",
-          title: "Délégation",
-          description: "Comprendre les bases de la délégation",
+          title: "La délégation efficace",
+          description: "Apprendre à déléguer efficacement",
           videoUrl: "/videos/8-1-delegation.mp4",
           pdfUrl: "/pdfs/8-1-delegation.pdf",
           order: 1
         },
         {
           id: "8.2",
-          title: "Automatisation",
-          description: "Identifier les tâches à automatiser",
+          title: "L'automatisation",
+          description: "Automatiser les tâches répétitives",
           videoUrl: "/videos/8-2-automatisation.mp4",
           pdfUrl: "/pdfs/8-2-automatisation.pdf",
           order: 2
         },
         {
           id: "8.3",
-          title: "Outils",
-          description: "Choisir ses outils d'automatisation",
-          videoUrl: "/videos/8-3-outils.mp4",
-          pdfUrl: "/pdfs/8-3-outils.pdf",
+          title: "La documentation",
+          description: "Documenter ses processus pour l'échelle",
+          videoUrl: "/videos/8-3-documentation.mp4",
+          pdfUrl: "/pdfs/8-3-documentation.pdf",
           order: 3
-        },
-        {
-          id: "8.4",
-          title: "Processus",
-          description: "Documenter ses processus",
-          videoUrl: "/videos/8-4-processus.mp4",
-          pdfUrl: "/pdfs/8-4-processus.pdf",
-          order: 4
-        },
-        {
-          id: "8.5",
-          title: "Évolution",
-          description: "Planifier son évolution",
-          videoUrl: "/videos/8-5-evolution.mp4",
-          pdfUrl: "/pdfs/8-5-evolution.pdf",
-          order: 5
         }
       ],
       paliers: [
@@ -841,6 +714,7 @@ export default function MasterclassPage() {
   const nextModule = currentModule && masterclassContent.modules[currentModule.id + 1];
   const isLastPart = currentPartIndex === (currentModule?.parts.length ?? 0) - 1;
 
+  // Liste des modules à afficher sous forme de cards
   return (
     <div className="min-h-screen bg-background">
       {/* Header fixe */}
@@ -868,331 +742,37 @@ export default function MasterclassPage() {
         </div>
       </div>
 
-      {/* Contenu principal avec padding-top pour compenser le header fixe */}
+      {/* Contenu principal avec cards */}
       <div className="container mx-auto px-4 pt-8 pb-8">
-        {/* Mode d'affichage */}
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex space-x-4">
-            <button
-              onClick={() => setViewMode('focus')}
-              className={`px-4 py-2 rounded-md ${
-                viewMode === 'focus'
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-200 text-gray-700'
-              }`}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {masterclassContent.modules.map((module) => (
+            <Link
+              key={module.id}
+              href={`/masterclass/module${module.id === 2.5 ? '2-5' : module.id}`}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 group"
+              style={{ borderColor: module.color, borderWidth: 2 }}
             >
-              Focus
-            </button>
-            <button
-              onClick={() => setViewMode('explore')}
-              className={`px-4 py-2 rounded-md ${
-                viewMode === 'explore'
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-200 text-gray-700'
-              }`}
-            >
-              Explorer
-            </button>
-          </div>
+              <div className="p-6 relative" style={{ backgroundColor: module.color + '20' }}>
+                <div className="flex items-center mb-4">
+                  <span className="text-3xl mr-3">{module.icon}</span>
+                  <h3 className="text-xl font-bold text-gray-800 group-hover:text-primary transition-colors duration-200">{module.title}</h3>
+                </div>
+                <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                  {module.description}
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="text-xs bg-white/80 text-gray-700 px-2 py-1 rounded-full">
+                    {module.parts?.length || module.paliers?.length || 0} parties
+                  </span>
+                </div>
+              </div>
+              <div className="p-4 flex items-center justify-between bg-gray-50 border-t border-gray-100">
+                <span className="text-primary font-medium">Accéder au module</span>
+                <span className="ml-2 text-xl">→</span>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* Contenu principal */}
-        {viewMode === 'focus' ? (
-          <div className="flex flex-col lg:grid lg:grid-cols-4 gap-8">
-            {/* Module sélectionné */}
-            <div className="lg:col-span-1 order-1">
-              {activeModuleId !== -1 && currentModule && (
-                <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
-                  <div className="flex items-center mb-4">
-                    <span className="text-3xl mr-3">{currentModule.icon}</span>
-                    <div>
-                      <h2 className="text-xl font-bold">{currentModule.title}</h2>
-                      <p className="text-sm text-gray-500">{currentModule.parts.length} parties</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">{currentModule.description}</p>
-                  <div className="space-y-2">
-                    {currentModule.parts.map((part) => (
-                      <button
-                        key={part.id}
-                        onClick={() => setActivePartId(part.id)}
-                        className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
-                          activePartId === part.id
-                            ? 'bg-primary/10 text-primary font-medium'
-                            : 'text-gray-600 hover:bg-gray-50'
-                        }`}
-                      >
-                        <div className="flex items-center">
-                          <span className="mr-2">▶</span>
-                          <span className="truncate">{part.title}</span>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Contenu principal (vidéo et détails) */}
-            <div className="lg:col-span-2 order-2">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                {activeModuleId === -1 ? (
-                  <div className="p-8">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="mb-8">
-                        <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                          {masterclassContent.introduction.title}
-                        </h2>
-                        <p className="text-gray-600 text-lg">
-                          {masterclassContent.introduction.description}
-                        </p>
-                      </div>
-                      <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-lg">
-                        <video
-                          src={masterclassContent.introduction.videoUrl}
-                          controls
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <a
-                          href={masterclassContent.introduction.workbookUrl}
-                          download
-                          className="w-full sm:w-auto inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 shadow-md"
-                        >
-                          <span className="mr-2">📄</span>
-                          Télécharge le PDF
-                        </a>
-                        <button
-                          onClick={() => {
-                            setActiveModuleId(0);
-                            setActivePartId(masterclassContent.modules[0].parts[0].id);
-                          }}
-                          className="w-full sm:w-auto inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 shadow-md"
-                        >
-                          Commencer le premier module
-                          <span className="ml-2">→</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ) : currentPart ? (
-                  <div className="p-8">
-                    <div className="max-w-4xl mx-auto">
-                      <div className="mb-8">
-                        <div className="flex items-center mb-4">
-                          <span className="text-2xl mr-3">{currentModule?.icon}</span>
-                          <div>
-                            <h2 className="text-3xl font-bold text-gray-800">
-                              {currentPart.title}
-                            </h2>
-                            <p className="text-gray-500">
-                              Module {currentModule?.title}
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-gray-600 text-lg mt-4">
-                          {currentPart.description}
-                        </p>
-                      </div>
-                      
-                      <div className="aspect-video rounded-xl overflow-hidden mb-8 shadow-lg">
-                        <video
-                          src={currentPart.videoUrl}
-                          controls
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-                        <a
-                          href={currentPart.pdfUrl}
-                          download
-                          className="w-full sm:w-auto inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 shadow-md"
-                        >
-                          <span className="mr-2">📄</span>
-                          Télécharge le PDF
-                        </a>
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row justify-between gap-4 mt-8 pt-6 border-t border-gray-100">
-                        {prevPart && (
-                          <button
-                            onClick={() => setActivePartId(prevPart.id)}
-                            className="w-full sm:w-auto flex items-center px-6 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-                          >
-                            <span className="mr-2">←</span>
-                            Leçon précédente
-                          </button>
-                        )}
-                        {isLastPart && nextModule ? (
-                          <button
-                            onClick={() => {
-                              setActiveModuleId(nextModule.id);
-                              setActivePartId(nextModule.parts[0].id);
-                            }}
-                            className="w-full sm:w-auto flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 shadow-md"
-                          >
-                            Module suivant
-                            <span className="ml-2">→</span>
-                          </button>
-                        ) : nextPart ? (
-                          <button
-                            onClick={() => setActivePartId(nextPart.id)}
-                            className="w-full sm:w-auto flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-200 shadow-md"
-                          >
-                            Leçon suivante
-                            <span className="ml-2">→</span>
-                          </button>
-                        ) : null}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="p-8">
-                    <div className="max-w-3xl mx-auto">
-                      <div className="flex items-center mb-6">
-                        <span className="text-3xl mr-4">{currentModule?.icon}</span>
-                        <div>
-                          <h2 className="text-3xl font-bold text-gray-800">
-                            {currentModule?.title}
-                          </h2>
-                          <p className="text-gray-500">
-                            {currentModule?.parts.length} parties
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-gray-600 text-lg mb-6">
-                        {currentModule?.description}
-                      </p>
-                      <p className="text-gray-500">
-                        Sélectionne une partie pour commencer.
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Liste des modules */}
-            <div className="lg:col-span-1 order-3">
-              <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
-                <h2 className="text-xl font-bold mb-6 text-gray-800">Modules</h2>
-                <div className="space-y-2">
-                  {masterclassContent.modules.map((module) => (
-                    <button
-                      key={module.id}
-                      onClick={() => setActiveModuleId(module.id)}
-                      className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${
-                        activeModuleId === module.id
-                          ? 'bg-primary text-white shadow-md'
-                          : 'bg-gray-50 hover:bg-gray-100'
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <span className="text-2xl mr-3">{module.icon}</span>
-                        <span className="font-medium">{module.title}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-8">
-            {/* En-tête */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold mb-4">Explorer la Masterclass</h2>
-              <p className="text-gray-600">
-                Découvre l'ensemble des modules et de leur contenu. Clique sur un module pour voir ses détails.
-              </p>
-            </div>
-
-            {/* Modules */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {masterclassContent.modules.map((module) => (
-                <div
-                  key={module.id}
-                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200"
-                >
-                  {/* En-tête du module */}
-                  <div
-                    className="p-6 relative"
-                    style={{ backgroundColor: module.color + '20' }}
-                  >
-                    <div className="flex items-center mb-4">
-                      <span className="text-3xl mr-3">{module.icon}</span>
-                      <h3 className="text-xl font-bold">{module.title}</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm line-clamp-2">
-                      {module.description}
-                    </p>
-                    <div className="absolute top-4 right-4">
-                      <span className="text-xs bg-white/80 text-gray-700 px-2 py-1 rounded-full">
-                        {module.parts.length} parties
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Contenu du module */}
-                  <div className="p-6">
-                    <div className="space-y-4">
-                      {/* Parties du module */}
-                      <div className="space-y-2 max-h-[300px] overflow-y-auto pr-2">
-                        {module.parts.map((part) => (
-                          <div
-                            key={part.id}
-                            className="group p-3 bg-gray-50 rounded-md hover:bg-gray-100 cursor-pointer transition-colors duration-200"
-                            onClick={() => {
-                              setViewMode('focus');
-                              setActiveModuleId(module.id);
-                              setActivePartId(part.id);
-                            }}
-                          >
-                            <div className="flex items-center justify-between">
-                              <div className="flex-1 min-w-0">
-                                <p className="font-medium truncate">
-                                  {part.title}
-                                </p>
-                                <p className="text-sm text-gray-500 mt-1 line-clamp-2">
-                                  {part.description}
-                                </p>
-                              </div>
-                              <div className="flex items-center space-x-2 ml-4">
-                                <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                                  Vidéo
-                                </span>
-                                <span className="text-gray-400 group-hover:text-gray-600">
-                                  →
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Bouton d'action */}
-                      <div className="pt-2">
-                        <button
-                          onClick={() => {
-                            setViewMode('focus');
-                            setActiveModuleId(module.id);
-                            setActivePartId(module.parts[0].id);
-                          }}
-                          className="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2"
-                        >
-                          <span>Commence ce module</span>
-                          <span>→</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

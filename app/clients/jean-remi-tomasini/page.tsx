@@ -20,7 +20,22 @@ interface BaseResource {
 
 interface TutorialResource extends BaseResource {
   type: 'tutorial';
-  videos: Video[];
+  content: {
+    dashboard: {
+      title: string;
+      sections: Array<{
+        title: string;
+        content: string;
+      }>;
+    };
+    masterclass: {
+      title: string;
+      sections: Array<{
+        title: string;
+        content: string;
+      }>;
+    };
+  };
 }
 
 interface DocumentResource extends BaseResource {
@@ -37,10 +52,7 @@ const clientInfo = {
   phone: "+33 7 82 81 62 06",
   googleDocs: {
     "Plan de suivi": "https://docs.google.com/document/d/1MLYcz0u98nIGEd53FZIwP-N-JG64oaBGwA1Pu67B4lU/edit?usp=sharing",
-    "Notes de séance": "https://docs.google.com/document/d/1QXKzK01RF4yZXpZXpdJs4ZBeNhhQ0ARagfGKnILLZtI/edit?usp=sharing",
-    "Branding": "https://docs.google.com/document/d/1s0TGFBua9eUVpXXRh1YXAE5BTek-FH0r9CklwCocfrc/edit?usp=sharing",
-    "Cible": "https://docs.google.com/document/d/17WAbTCESHSpqQlAoX955DnaL37zlF13ViL3oBJeXhR8/edit?usp=sharing",
-    "Offre": "https://docs.google.com/document/d/1RImhu0YhMvHiZmgBOk1xZ0tY8HqyrB71Uw8ArbToBas/edit?usp=sharing"
+    "Notes de séance": "https://docs.google.com/document/d/1QXKzK01RF4yZXpZXpdJs4ZBeNhhQ0ARagfGKnILLZtI/edit?usp=sharing"
   }
 };
 
@@ -48,39 +60,66 @@ const clientInfo = {
 const onboardingResources: Record<string, Resource> = {
   onboarding: {
     title: "Onboarding",
-    description: "Vidéos de bienvenue et processus d'intégration",
+    description: "Guide d'utilisation de votre espace client",
     icon: FiBook,
     type: "tutorial",
-    videos: [
-      {
-        title: "Bienvenue dans Thérapreneur",
-        url: "https://www.youtube.com/embed/VIDEO_ID_1",
-        description: "Découvrez votre espace client et les prochaines étapes"
+    content: {
+      dashboard: {
+        title: "Votre Dashboard",
+        sections: [
+          {
+            title: "Navigation",
+            content: "Votre espace client est organisé en plusieurs sections principales : les ressources d'onboarding, les documents partagés, et vos informations personnelles. Utilisez la barre de navigation en haut pour accéder rapidement à la Masterclass."
+          },
+          {
+            title: "Documents",
+            content: "Tous vos documents importants sont centralisés dans la section 'Documents partagés'. Vous y trouverez votre plan de suivi, vos notes de séance, et les documents stratégiques de votre développement."
+          },
+          {
+            title: "Ressources",
+            content: "La section 'Ressources d'Onboarding' contient tous les guides et tutoriels nécessaires pour bien démarrer. Consultez-les régulièrement pour tirer le meilleur parti de votre accompagnement."
+          }
+        ]
       },
-      {
-        title: "Comment utiliser votre espace",
-        url: "https://www.youtube.com/embed/VIDEO_ID_2",
-        description: "Guide d'utilisation de votre espace client"
+      masterclass: {
+        title: "La Masterclass",
+        sections: [
+          {
+            title: "Objectif",
+            content: "La Masterclass Thérapreneur est votre formation complète pour transformer votre pratique thérapeutique en entreprise florissante. Elle combine stratégie business, marketing et développement personnel."
+          },
+          {
+            title: "Contenu",
+            content: "Vous accédez à des modules progressifs couvrant : la définition de votre cible, la structuration de votre offre, votre branding, et les stratégies de croissance. Chaque module inclut des exercices pratiques et des ressources complémentaires."
+          },
+          {
+            title: "Accès",
+            content: "Cliquez sur le bouton 'Accéder à la Masterclass' en haut de votre dashboard pour rejoindre la formation. Vous pouvez suivre les modules à votre rythme et revenir sur les contenus à tout moment."
+          }
+        ]
       }
-    ]
+    }
   },
-  discord: {
-    title: "Protocole Discord",
-    description: "Guide d'utilisation de notre espace communautaire",
-    icon: FiMessageSquare,
-    type: "tutorial",
-    videos: [
-      {
-        title: "Accéder et rejoindre Discord",
-        url: "https://www.youtube.com/embed/VIDEO_ID_3",
-        description: "Téléchargez Discord sur votre ordinateur ou utilisez la version web sur discord.com. Utilisez le lien d'invitation qui vous a été envoyé par email."
-      },
-      {
-        title: "Participer à la communauté",
-        url: "https://www.youtube.com/embed/VIDEO_ID_4",
-        description: "Rendez-vous dans le canal #présentations pour vous présenter à la communauté. Découvrez les différents canaux thématiques et les ressources disponibles. N'hésitez pas à poser vos questions et à partager vos expériences."
-      }
-    ]
+  branding: {
+    title: "Branding",
+    description: "Guide de votre identité visuelle",
+    icon: FiImage,
+    type: "document",
+    url: "https://docs.google.com/document/d/1s0TGFBua9eUVpXXRh1YXAE5BTek-FH0r9CklwCocfrc/edit?usp=sharing"
+  },
+  cible: {
+    title: "Cible",
+    description: "Définition de votre client idéal",
+    icon: FiTarget,
+    type: "document",
+    url: "https://docs.google.com/document/d/17WAbTCESHSpqQlAoX955DnaL37zlF13ViL3oBJeXhR8/edit?usp=sharing"
+  },
+  offre: {
+    title: "Offre",
+    description: "Structure de votre offre de services",
+    icon: FiPackage,
+    type: "document",
+    url: "https://docs.google.com/document/d/1RImhu0YhMvHiZmgBOk1xZ0tY8HqyrB71Uw8ArbToBas/edit?usp=sharing"
   }
 };
 
@@ -132,181 +171,58 @@ const Modal = ({
   );
 };
 
-// Composant pour les vidéos d'onboarding
+// Composant pour l'onboarding
 const OnboardingModal = ({ onClose }: { onClose: () => void }) => {
-  const [currentVideo, setCurrentVideo] = useState(0);
-  const videos = (onboardingResources.onboarding as TutorialResource).videos;
+  const [activeSection, setActiveSection] = useState<'dashboard' | 'masterclass'>('dashboard');
+  const content = (onboardingResources.onboarding as TutorialResource).content;
 
   return (
     <Modal
       isOpen={true}
       onClose={onClose}
-      title="Onboarding - Vidéos de bienvenue"
-      description="Découvrez votre espace client étape par étape"
+      title="Guide d'Onboarding"
+      description="Découvrez votre espace client et la Masterclass"
     >
-      <div className="space-y-6">
-        {videos.map((video, index) => (
-          <div
-            key={index}
-            className={`bg-white rounded-lg p-6 shadow-sm border-2 ${
-              currentVideo === index ? 'border-[#2C3E50]' : 'border-transparent'
-            } hover:shadow-md transition-all duration-200`}
-            onClick={() => setCurrentVideo(index)}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-lg font-medium text-[#2C3E50]">
-                {video.title}
-              </h4>
-              <span className="px-3 py-1 bg-[#2C3E50] text-white rounded-full text-sm">
-                Vidéo {index + 1}/{videos.length}
-              </span>
-            </div>
-            <p className="text-gray-600 mb-4">
-              {video.description}
-            </p>
-            <div className="border-2 border-[#2C3E50] rounded-lg overflow-hidden">
-              <div className="aspect-video bg-gray-50">
-                <iframe
-                  src={video.url}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-8 flex justify-end space-x-3">
+      <div className="flex space-x-4 mb-8">
         <button
-          onClick={() => setCurrentVideo(prev => Math.max(0, prev - 1))}
-          disabled={currentVideo === 0}
-          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
-            currentVideo === 0 ? 'opacity-50 cursor-not-allowed' : ''
+          onClick={() => setActiveSection('dashboard')}
+          className={`px-4 py-2 rounded-lg transition-colors ${
+            activeSection === 'dashboard'
+              ? 'bg-[#2C3E50] text-white'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          Précédent
+          Dashboard
         </button>
         <button
-          onClick={() => setCurrentVideo(prev => Math.min(videos.length - 1, prev + 1))}
-          disabled={currentVideo === videos.length - 1}
-          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
-            currentVideo === videos.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
+          onClick={() => setActiveSection('masterclass')}
+          className={`px-4 py-2 rounded-lg transition-colors ${
+            activeSection === 'masterclass'
+              ? 'bg-[#2C3E50] text-white'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          Suivant
-        </button>
-        <button
-          onClick={onClose}
-          className="px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors"
-        >
-          Fermer
+          Masterclass
         </button>
       </div>
-    </Modal>
-  );
-};
 
-// Composant pour le protocole Discord
-const DiscordModal = ({ onClose }: { onClose: () => void }) => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const steps = [
-    {
-      title: "Accéder à Discord",
-      description: "Téléchargez Discord sur votre ordinateur ou utilisez la version web sur discord.com",
-      video: (onboardingResources.discord as TutorialResource).videos[0],
-      items: [
-        "Téléchargez Discord sur votre ordinateur",
-        "Ou utilisez la version web sur discord.com",
-        "Utilisez le lien d'invitation qui vous a été envoyé par email"
-      ]
-    },
-    {
-      title: "Rejoindre et participer",
-      description: "Guide pour participer à la communauté",
-      video: (onboardingResources.discord as TutorialResource).videos[1],
-      items: [
-        "Rendez-vous dans le canal #présentations pour vous présenter",
-        "Découvrez les différents canaux thématiques",
-        "N'hésitez pas à poser vos questions",
-        "Partagez vos expériences avec la communauté"
-      ]
-    }
-  ];
-
-  return (
-    <Modal
-      isOpen={true}
-      onClose={onClose}
-      title="Protocole Discord"
-      description="Guide complet pour utiliser notre espace communautaire"
-    >
       <div className="space-y-6">
-        {steps.map((step, index) => (
+        {content[activeSection].sections.map((section, index) => (
           <div
             key={index}
-            className={`bg-white rounded-lg p-6 shadow-sm border-2 ${
-              currentStep === index ? 'border-[#2C3E50]' : 'border-transparent'
-            } hover:shadow-md transition-all duration-200`}
-            onClick={() => setCurrentStep(index)}
+            className="bg-white rounded-lg p-6 shadow-sm border-2 border-[#2C3E50] hover:shadow-md transition-all duration-200"
           >
-            <h4 className="text-lg font-medium text-[#2C3E50] mb-4 flex items-center">
-              <span className="w-8 h-8 bg-[#2C3E50] text-white rounded-full flex items-center justify-center mr-3">
-                <span className="font-medium text-sm">{index + 1}</span>
-              </span>
-              {step.title}
+            <h4 className="text-lg font-medium text-[#2C3E50] mb-3">
+              {section.title}
             </h4>
-            <p className="text-gray-600 mb-4">
-              {step.description}
+            <p className="text-gray-600">
+              {section.content}
             </p>
-            {step.items && (
-              <div className="space-y-3 mb-4">
-                {step.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#2C3E50] text-white rounded-full flex items-center justify-center mt-0.5">
-                      <span className="text-xs font-medium">{itemIndex + 1}</span>
-                    </div>
-                    <p className="text-gray-600">{item}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-            <div className="border-2 border-[#2C3E50] rounded-lg overflow-hidden">
-              <div className="aspect-video bg-gray-50">
-                <iframe
-                  src={step.video.url}
-                  title={step.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 flex justify-end space-x-3">
-        <button
-          onClick={() => setCurrentStep(prev => Math.max(0, prev - 1))}
-          disabled={currentStep === 0}
-          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
-            currentStep === 0 ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-        >
-          Précédent
-        </button>
-        <button
-          onClick={() => setCurrentStep(prev => Math.min(steps.length - 1, prev + 1))}
-          disabled={currentStep === steps.length - 1}
-          className={`px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors ${
-            currentStep === steps.length - 1 ? 'opacity-50 cursor-not-allowed' : ''
-          }`}
-        >
-          Suivant
-        </button>
+      <div className="mt-8 flex justify-end">
         <button
           onClick={onClose}
           className="px-4 py-2 bg-[#2C3E50] text-white rounded-lg hover:bg-[#1a2530] transition-colors"
@@ -320,7 +236,6 @@ const DiscordModal = ({ onClose }: { onClose: () => void }) => {
 
 export default function ClientPage() {
   const [showOnboardingTutorial, setShowOnboardingTutorial] = useState(false);
-  const [showDiscordTutorial, setShowDiscordTutorial] = useState(false);
   const router = useRouter();
 
   return (
@@ -410,17 +325,15 @@ export default function ClientPage() {
                         onClick={() => {
                           if (key === 'onboarding') {
                             setShowOnboardingTutorial(true);
-                          } else if (key === 'discord') {
-                            setShowDiscordTutorial(true);
                           }
                         }}
                         className="button-primary focus-visible"
                       >
                         <div className="flex items-center">
                           <div className="mr-2">
-                            <FiVideo size={18} />
+                            <FiBook size={18} />
                           </div>
-                          Voir les vidéos
+                          Voir le guide
                         </div>
                       </button>
                     ) : (
@@ -514,7 +427,6 @@ export default function ClientPage() {
 
       {/* Modals */}
       {showOnboardingTutorial && <OnboardingModal onClose={() => setShowOnboardingTutorial(false)} />}
-      {showDiscordTutorial && <DiscordModal onClose={() => setShowDiscordTutorial(false)} />}
     </div>
   );
 } 
