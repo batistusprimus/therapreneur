@@ -2,6 +2,8 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Anton, Archivo_Black, Montserrat } from 'next/font/google'
 import './globals.css'
+import SiteHeader from './components/SiteHeader'
+import SiteFooter from './components/SiteFooter'
 
 const anton = Anton({ 
   weight: '400',
@@ -33,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${anton.variable} ${archivoBlack.variable} ${montserrat.variable} font-sans bg-white`}>
-        {children}
+        <SiteHeader />
+        <main className="pt-20">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   )
