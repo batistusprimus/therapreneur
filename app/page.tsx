@@ -1,26 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import AnimatedSection from './components/AnimatedSection';
-import { 
-  TrendingUpIcon, 
-  TargetIcon, 
-  ZapIcon, 
-  RocketIcon, 
-  BrainIcon, 
-  LayersIcon, 
-  SunIcon, 
-  UsersIcon, 
-  HeartIcon, 
-  StarIcon,
-  SettingsIcon,
-  CheckCircleIcon,
-  ArrowRightIcon,
-  MegaphoneIcon,
-  BarChartIcon,
-  EyeIcon,
-  AnimatedIcon,
-  GradientIcon
-} from './components/Icons';
 
 export const metadata: Metadata = {
   title: 'Thérapreneur | Comment 300 thérapeutes ont doublé leurs revenus en 90 jours',
@@ -35,34 +14,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Modern Startup Style */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50"></div>
-        <div className="absolute inset-0 opacity-30">
-          <div className="particles-bg">
-            <div className="particle" style={{left: '20%', top: '20%'}}></div>
-            <div className="particle" style={{left: '50%', top: '30%'}}></div>
-            <div className="particle" style={{left: '80%', top: '15%'}}></div>
-            <div className="particle" style={{left: '30%', top: '70%'}}></div>
-            <div className="particle" style={{left: '70%', top: '80%'}}></div>
-          </div>
-        </div>
-        
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div className="container-custom py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="space-y-6 animate-fade-in-up">
+              <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#DCB253]/10 to-[#DCB253]/5 px-4 py-2 rounded-full border border-[#DCB253]/20">
-                  <AnimatedIcon>
-                    <ZapIcon className="text-[#DCB253]" size={20} />
-                  </AnimatedIcon>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-[#DCB253]">
+                    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                   <span className="text-sm font-medium text-gray-700">+300 thérapeutes ont doublé leurs revenus en 90 jours</span>
                 </div>
                 
                 <h1 className="text-6xl lg:text-7xl font-black leading-tight text-gray-900">
                   Comment j&apos;ai aidé{' '}
-                  <span className="gradient-text">300 thérapeutes</span>{' '}
+                  <span className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 bg-clip-text text-transparent">300 thérapeutes</span>{' '}
                   à doubler leurs revenus en 90 jours
                 </h1>
                 
@@ -73,88 +40,63 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center gap-2 justify-center"
+                >
+                  🎯 Accéder à la Méthode POV Gratuite
+                  <span className="animate-pulse">🆓</span>
+                </a>
                 <Link 
                   href="/services" 
-                  className="button-gradient text-white px-8 py-4 rounded-xl font-bold text-lg shadow-md"
+                  className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all hover:shadow-lg transform hover:scale-105"
                 >
-                  Réserver un audit offert
-                </Link>
-                <Link 
-                  href="/savoir-faire" 
-                  className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all hover-lift"
-                >
-                  Découvrir notre savoir‑faire
+                  Voir nos offres
                 </Link>
               </div>
 
               {/* Stats - Modern Cards */}
-              <div className="grid grid-cols-3 gap-4 pt-8 animate-fade-in-up delay-300">
-                <div className="modern-card p-4 text-center rounded-xl hover-glow">
-                  <AnimatedIcon>
-                    <UsersIcon className="text-[#DCB253] mx-auto mb-2" size={24} />
-                  </AnimatedIcon>
+              <div className="grid grid-cols-3 gap-4 pt-8">
+                <div className="bg-white rounded-xl p-4 text-center shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#DCB253] mx-auto mb-2">
+                    <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
                   <div className="text-2xl font-bold text-gray-900">300+</div>
                   <div className="text-sm text-gray-600">Thérapeutes aidés</div>
                 </div>
-                <div className="modern-card p-4 text-center rounded-xl hover-glow">
-                  <AnimatedIcon delay={100}>
-                    <TrendingUpIcon className="text-[#DCB253] mx-auto mb-2" size={24} />
-                  </AnimatedIcon>
+                <div className="bg-white rounded-xl p-4 text-center shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#DCB253] mx-auto mb-2">
+                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                   <div className="text-2xl font-bold text-gray-900">15k€/mois</div>
                   <div className="text-sm text-gray-600">Revenus récurrents</div>
                 </div>
-                <div className="modern-card p-4 text-center rounded-xl hover-glow">
-                  <AnimatedIcon delay={200}>
-                    <RocketIcon className="text-[#DCB253] mx-auto mb-2" size={24} />
-                  </AnimatedIcon>
+                <div className="bg-white rounded-xl p-4 text-center shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#DCB253] mx-auto mb-2">
+                    <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                   <div className="text-2xl font-bold text-gray-900">90j</div>
                   <div className="text-sm text-gray-600">Transformation</div>
                 </div>
               </div>
             </div>
             
-            <div className="relative animate-fade-in-right">
-              <div className="relative">
-                {/* Modern floating cards */}
-                <div className="absolute -top-10 -left-10 modern-card p-6 rounded-2xl animate-float">
-                  <AnimatedIcon>
-                    <TargetIcon className="text-[#DCB253] mb-3" size={32} />
-                  </AnimatedIcon>
-                  <h3 className="font-bold text-gray-900 mb-2">Ciblage Précis</h3>
-                  <p className="text-sm text-gray-600">Stratégie sur-mesure pour thérapeutes</p>
-                </div>
-                
-                <div className="absolute -bottom-10 -right-10 modern-card p-6 rounded-2xl animate-float" style={{animationDelay: '1s'}}>
-                  <AnimatedIcon>
-                    <StarIcon className="text-[#DCB253] mb-3" size={32} />
-                  </AnimatedIcon>
-                  <h3 className="font-bold text-gray-900 mb-2">Excellence</h3>
-                  <p className="text-sm text-gray-600">Standards d&apos;agence premium</p>
-                </div>
-                
-                {/* Main visual */}
-                <div className="bg-gradient-to-br from-[#DCB253] to-[#DCB253]/80 rounded-3xl p-12 text-white shadow-2xl animate-glow">
-                  <div className="text-center space-y-6">
-                    <AnimatedIcon>
-                      <BrainIcon className="mx-auto text-white" size={64} />
-                    </AnimatedIcon>
-                    <h3 className="text-3xl font-bold">Notre Expertise</h3>
-                    <p className="text-lg opacity-90">
-                      Agence spécialisée dans la transformation digitale des thérapeutes
-                    </p>
-                    <div className="flex justify-center space-x-4">
-                      <div className="bg-white/20 rounded-lg p-3">
-                        <LayersIcon className="text-white" size={24} />
-                      </div>
-                      <div className="bg-white/20 rounded-lg p-3">
-                        <SettingsIcon className="text-white" size={24} />
-                      </div>
-                      <div className="bg-white/20 rounded-lg p-3">
-                        <HeartIcon className="text-white" size={24} />
-                      </div>
-                    </div>
-                  </div>
+            <div className="relative">
+              {/* Modern visual */}
+              <div className="bg-gradient-to-br from-[#DCB253] to-[#DCB253]/80 rounded-3xl p-12 text-white shadow-2xl">
+                <div className="text-center space-y-6">
+                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" className="mx-auto text-white">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
+                  </svg>
+                  <h3 className="text-3xl font-bold">L'Écosystème Thérapreneur</h3>
+                  <p className="text-lg opacity-90">
+                    Transformation digitale spécialisée pour thérapeutes entrepreneurs
+                  </p>
                 </div>
               </div>
             </div>
@@ -162,10 +104,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problème & Solution - Inspiré de la VSL */}
+      {/* Problème & Solution */}
       <section className="py-24 bg-gradient-to-br from-red-50 to-white">
         <div className="container-custom">
-          <AnimatedSection className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
               Êtes-vous pris au piège du{' '}
               <span className="text-red-600">"succès apparent"</span> ?
@@ -173,10 +115,10 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Votre agenda est plein, mais vous êtes dans une prison dorée...
             </p>
-          </AnimatedSection>
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <AnimatedSection className="space-y-8" animation="fade-in-left">
+            <div className="space-y-8">
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
                 <h3 className="text-xl font-bold text-red-800 mb-4">❌ Les signes du piège :</h3>
                 <ul className="space-y-3 text-gray-700">
@@ -186,16 +128,16 @@ export default function Home() {
                   <li>• Si vous tombez malade ou partez en vacances, vos revenus s'effondrent</li>
                 </ul>
               </div>
-            </AnimatedSection>
+            </div>
             
-            <AnimatedSection className="space-y-8" animation="fade-in-right">
+            <div className="space-y-8">
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                <h3 className="text-xl font-bold text-green-800 mb-4">✅ La solution POV :</h3>
+                <h3 className="text-xl font-bold text-green-800 mb-4">✅ La solution Thérapreneur :</h3>
                 <ul className="space-y-3 text-gray-700">
-                  <li>• <strong>Doubler vos revenus</strong> sans prendre un patient supplémentaire</li>
-                  <li>• Créer <strong>5k€ à 15k€/mois de revenus récurrents</strong> grâce au digital</li>
-                  <li>• Rester aligné avec vos valeurs thérapeutiques</li>
-                  <li>• Transformer 1€ de temps en 10€ de revenus digitaux</li>
+                  <li>• <strong>Transformer votre expertise</strong> en empire digital éthique</li>
+                  <li>• Créer des <strong>revenus scalables</strong> sans perdre vos valeurs</li>
+                  <li>• <strong>Impact démultiplié</strong> : aider plus de personnes</li>
+                  <li>• <strong>Liberté retrouvée</strong> : business qui fonctionne sans vous</li>
                 </ul>
               </div>
             </div>
@@ -203,506 +145,301 @@ export default function Home() {
         </div>
       </section>
 
-      {/* La Méthode POV */}
-      <section className="py-24 bg-[#DCB253]/10">
-        <div className="container-custom">
-          <div className="text-center mb-16 fade-in-section">
-            <div className="inline-flex items-center gap-2 bg-[#DCB253] text-white px-4 py-2 rounded-full mb-6">
-              <TargetIcon size={20} />
-              <span className="text-sm font-medium">La Méthode Exclusive</span>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
-              La Méthode{' '}
-              <span className="gradient-text">POV</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Le système en 3 étapes qui permet aux thérapeutes de créer des revenus récurrents prévisibles grâce au digital
-            </p>
-            <div className="bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-lg">
-              <p className="text-lg text-gray-700 font-medium">
-                <strong>Exemple concret :</strong> Au lieu de facturer 6 × 80€ = 480€, 
-                vous facturez <span className="text-[#DCB253] font-bold">1 500€ pour le même patient</span>. 
-                Soit <strong>+212% de revenus par client</strong>.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* P = Positionnement */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover-lift fade-in-section">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-black text-white">P</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Positionnement</h3>
-                <p className="text-gray-600">Semaines 1-2</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-gray-700">
-                  Au lieu d'être "ostéopathe généraliste", vous devenez 
-                  <strong>"LE spécialiste des douleurs chroniques chez les cadres stressés"</strong>.
-                </p>
-                <div className="bg-[#DCB253]/10 p-4 rounded-lg">
-                  <p className="text-sm text-gray-700">
-                    <strong>Résultat :</strong> Vous pouvez facturer 150€ au lieu de 80€ 
-                    car vous êtes perçu comme l'expert incontournable.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* O = Offre */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover-lift fade-in-section transform scale-105 border-2 border-[#DCB253]">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-black text-white">O</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Offre Digitale</h3>
-                <p className="text-gray-600">Semaines 3-6</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-gray-700">
-                  Vous créez un programme d'accompagnement digital 3 mois à 
-                  <strong> 1 500€</strong> qui combine :
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li>• 6 séances individuelles (900€ de valeur)</li>
-                  <li>• Accès à votre méthode en ligne (300€)</li>
-                  <li>• Suivi WhatsApp personnalisé (300€)</li>
-                </ul>
-                <div className="bg-[#DCB253]/10 p-4 rounded-lg">
-                  <p className="text-sm text-gray-700">
-                    <strong>Résultat :</strong> +212% de revenus par client, 
-                    sans voir plus de patients.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* V = Visibilité */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover-lift fade-in-section">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-black text-white">V</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Visibilité</h3>
-                <p className="text-gray-600">Semaines 7-12</p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-gray-700">
-                  Vous mettez en place un système digital qui génère 
-                  <strong> 10-15 prospects qualifiés par mois</strong> via :
-                </p>
-                <ul className="text-sm text-gray-700 space-y-2">
-                  <li>• Contenu éducatif ciblé sur votre niche</li>
-                  <li>• Partenariats avec entreprises locales</li>
-                  <li>• Système de recommandations structuré</li>
-                </ul>
-                <div className="bg-[#DCB253]/10 p-4 rounded-lg">
-                  <p className="text-sm text-gray-700">
-                    <strong>Résultat :</strong> Une liste d'attente de 2-3 mois, 
-                    vous choisissez vos clients.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Calcul Simple */}
-          <div className="text-center mt-16 fade-in-section">
-            <div className="bg-gray-900 rounded-2xl p-8 text-white max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6">Le calcul est simple :</h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-red-900/30 rounded-lg p-6">
-                  <h4 className="text-lg font-bold text-red-300 mb-3">❌ Avant POV :</h4>
-                  <p className="text-lg">25 patients/mois × 80€ = <span className="font-bold">2 000€</span></p>
-                </div>
-                <div className="bg-green-900/30 rounded-lg p-6">
-                  <h4 className="text-lg font-bold text-green-300 mb-3">✅ Après POV :</h4>
-                  <p className="text-lg">10 programmes/mois × 1 500€ = <span className="font-bold text-[#DCB253]">15 000€</span></p>
-                </div>
-              </div>
-              <p className="text-xl mt-6 text-gray-300">
-                <strong>Même nombre d'heures travaillées. 7,5× plus de revenus.</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section - Modern */}
+      {/* L'Écosystème Thérapreneur */}
       <section className="py-24 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-16 fade-in-section">
-            <div className="inline-flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full mb-6">
-              <MegaphoneIcon className="text-[#DCB253]" size={20} />
-              <span className="text-sm font-medium text-gray-700">Nos Services d&apos;Agence</span>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-[#DCB253] text-white px-4 py-2 rounded-full mb-6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+              <span className="text-sm font-medium">L'Écosystème Complet</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
-              L&apos;accompagnement{' '}
-              <span className="gradient-text">sur-mesure</span>{' '}
-              pour thérapeutes
+              L'Écosystème{' '}
+              <span className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 bg-clip-text text-transparent">Thérapreneur</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              En tant qu&apos;agence spécialisée, nous proposons 3 niveaux d&apos;accompagnement 
-              adaptés à votre niveau et vos objectifs de croissance.
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+              Nous transformons votre expertise thérapeutique en empire digital éthique, 
+              sans jamais trahir vos valeurs humaines.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* DIY Service */}
-            <div className="modern-card p-8 rounded-2xl hover-lift group fade-in-section">
-              <div className="text-center mb-8">
-                <GradientIcon className="mx-auto mb-4">
-                  <BrainIcon size={32} />
-                </GradientIcon>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Formation DIY</h3>
-                <p className="text-gray-600">L&apos;autonomie guidée par nos experts</p>
-                <div className="text-4xl font-black text-[#DCB253] mt-4">5.000€</div>
+            {/* DIY */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all hover:scale-105">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">DIY</h3>
+                <p className="text-gray-600 mb-4">"L'Autonomie Guidée"</p>
+                <div className="text-4xl font-black text-[#DCB253]">5.000€</div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Masterclass complète de l&apos;agence</span>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Masterclass Complète (15.000€ de valeur)</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Frameworks exclusifs Thérapreneur</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>52 Coaching de Groupe/an</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">52 sessions de coaching de groupe</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Communauté privée d&apos;agence</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Communauté privée d'entraide</span>
                 </div>
               </div>
               
-              <button className="w-full mt-8 btn-modern bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-all group-hover:bg-[#DCB253]">
-                Choisir ce service
-              </button>
+              <Link 
+                href="/services"
+                className="w-full block bg-blue-600 text-white py-3 rounded-xl font-bold text-center hover:bg-blue-700 transition-all"
+              >
+                Découvrir DIY
+              </Link>
             </div>
 
-            {/* DWY Service - Highlighted */}
-            <div className="modern-card p-8 rounded-2xl hover-lift group fade-in-section relative border-2 border-[#DCB253] transform scale-105">
+            {/* DWY - Highlighted */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-[#DCB253] hover:shadow-xl transition-all transform scale-105 relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#DCB253] text-white px-6 py-2 rounded-full text-sm font-bold">POPULAIRE</span>
+                <span className="bg-[#DCB253] text-white px-4 py-2 rounded-full text-sm font-bold">POPULAIRE</span>
               </div>
               
-              <div className="text-center mb-8">
-                <GradientIcon className="mx-auto mb-4">
-                  <LayersIcon size={32} />
-                </GradientIcon>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Co-Création</h3>
-                <p className="text-gray-600">Accompagnement personnalisé d&apos;agence</p>
-                <div className="text-4xl font-black text-[#DCB253] mt-4">10.500€</div>
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/80 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                    <polygon points="12,2 2,7 12,12 22,7 12,2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="2,17 12,22 22,17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">DWY</h3>
+                <p className="text-gray-600 mb-4">"La Co-Création"</p>
+                <div className="text-4xl font-black text-[#DCB253]">10.500€</div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Tout le service DIY inclus</span>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Tout le DIY inclus</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">12 sessions individuelles d&apos;agence</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>12 Sessions Individuelles (6.000€)</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Stratégie personnalisée</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Réseau d&apos;experts partenaires</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Mise en relation experts</span>
                 </div>
               </div>
               
-              <button className="w-full mt-8 btn-modern bg-[#DCB253] text-white py-4 rounded-xl font-bold hover:bg-[#DCB253]/90 transition-all">
-                Choisir ce service
-              </button>
+              <Link 
+                href="/services"
+                className="w-full block bg-[#DCB253] text-white py-3 rounded-xl font-bold text-center hover:bg-[#DCB253]/90 transition-all"
+              >
+                Découvrir DWY
+              </Link>
             </div>
 
-            {/* DFY Service */}
-            <div className="modern-card p-8 rounded-2xl hover-lift group fade-in-section">
-              <div className="text-center mb-8">
-                <GradientIcon className="mx-auto mb-4">
-                  <RocketIcon size={32} />
-                </GradientIcon>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Service Complet</h3>
-                <p className="text-gray-600">L&apos;agence fait tout pour vous</p>
-                <div className="text-4xl font-black text-[#DCB253] mt-4">21.000€</div>
+            {/* DFY */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all hover:scale-105">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                    <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">DFY</h3>
+                <p className="text-gray-600 mb-4">"Transformation Clé en Main"</p>
+                <div className="text-4xl font-black text-[#DCB253]">21.000€</div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Service Co-Création inclus</span>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Tout le DWY inclus</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Exécution complète par l&apos;agence</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Exécution Complète</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Chef de projet dédié</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircleIcon className="text-[#DCB253] mt-1" size={20} />
-                  <span className="text-gray-700">Garantie de résultats</span>
+                <div className="flex items-center gap-2 text-sm text-gray-700">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Garantie de résultats</span>
                 </div>
               </div>
               
-              <button className="w-full mt-8 btn-modern bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-all group-hover:bg-[#DCB253]">
-                Choisir ce service
-              </button>
+              <Link 
+                href="/services"
+                className="w-full block bg-purple-600 text-white py-3 rounded-xl font-bold text-center hover:bg-purple-700 transition-all"
+              >
+                Découvrir DFY
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mon Parcours - Expertise Double */}
-      <section className="py-24 bg-gray-900 text-white">
+      {/* Les 5 Piliers */}
+      <section className="py-24 bg-gray-50">
         <div className="container-custom">
-          <div className="text-center mb-16 fade-in-section">
-            <div className="inline-flex items-center gap-2 bg-[#DCB253] px-4 py-2 rounded-full mb-6">
-              <BrainIcon className="text-white" size={20} />
-              <span className="text-sm font-medium text-white">Mon Parcours</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-black mb-6 text-white">
-              Thérapeute ET Entrepreneur :{' '}
-              <span className="text-[#DCB253]">Le combo pour (vraiment) aider les autres</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
+              Les 5 Piliers de{' '}
+              <span className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 bg-clip-text text-transparent">Notre Approche</span>
             </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Alignement thérapeutique avant profit. Nous co-créons une évolution naturelle 
+              de votre pratique vers le digital.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 fade-in-section">
-              <div className="bg-white/5 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-6">🩺 Côté Thérapeute :</h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li>• <strong>Ostéopathe D.O. depuis 2022</strong></li>
-                  <li>• Spécialisé en neurosciences de la douleur et prise en charge du sportif</li>
-                  <li>• Installation le 04 juillet 2022 à Lunel (Hérault)</li>
-                  <li>• Je connais votre réalité : les doutes, la pression, l'envie d'aider plus de monde</li>
-                </ul>
+          <div className="grid lg:grid-cols-5 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                  <path d="M20.84 4.61C20.3 4.07 19.7 3.64 19 3.35C18.3 3.06 17.6 2.92 16.9 2.92C16.2 2.92 15.5 3.06 14.8 3.35L12 5.61L11.04 4.61C9.9 3.46 8.35 2.92 6.8 3.08L3.64 14.86L12 23L20.36 14.86Z" stroke="currentColor" strokeWidth="2"/>
+                </svg>
               </div>
-              
-              <div className="bg-white/5 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-6">🚀 Côté Entrepreneur :</h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li>• <strong>Entrepreneur depuis 2016</strong> (bien avant d'être thérapeute)</li>
-                  <li>• Plus de 50 000€ investis en formations et accompagnements</li>
-                  <li>• Formé auprès des meilleurs experts en développement d'activité</li>
-                  <li>• 4 business en ligne aujourd'hui (SaaS, Programme High Ticket, x2 Agences)</li>
-                </ul>
-              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Éthique Préservée</h3>
+              <p className="text-gray-600 text-sm">Vos valeurs thérapeutiques restent au centre</p>
             </div>
             
-            <div className="fade-in-section">
-              <div className="bg-gradient-to-br from-[#DCB253] to-[#DCB253]/80 rounded-2xl p-8 text-white">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold">L'Étude de Cas</h3>
-                  <div className="space-y-4">
-                    <p className="text-lg">
-                      J'ai lancé mon <strong>premier business après 1,5 an de cabinet</strong>. 
-                      Aujourd'hui, 2 ans après, j'ai 4 business en ligne.
-                    </p>
-                    <div className="bg-white/20 rounded-lg p-6">
-                      <h4 className="font-bold text-xl mb-3">Ce qui a fait la différence :</h4>
-                      <ul className="space-y-2">
-                        <li>✅ <strong>Accès à l'information</strong></li>
-                        <li>✅ <strong>Courage, résilience et persévérance</strong></li>
-                      </ul>
-                    </div>
-                    <p className="text-lg border-l-4 border-white pl-4 italic">
-                      "Vous n'avez pas besoin d'avoir 10 ans de cabinet ou d'entrepreneuriat 
-                      pour lancer votre programme, vous avez besoin de la <strong>bonne méthode</strong>."
-                    </p>
-                  </div>
-                </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M19.4 15C19.2 15.3 19.1 15.7 19.1 16.1L20.6 19L18.6 20.9L16.5 18.9C16.1 19.1 15.6 19.2 15.1 19.2L12.5 20.7L11.6 20.9L10.8 17.2Z" stroke="currentColor" strokeWidth="2"/>
+                </svg>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Transition Progressive</h3>
+              <p className="text-gray-600 text-sm">Cabinet maintenu pendant la transition</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Expertise Valorisée</h3>
+              <p className="text-gray-600 text-sm">Votre méthode devient un actif scalable</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                  <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Accompagnement Holistique</h3>
+              <p className="text-gray-600 text-sm">Support technique ET humain</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
+                  <line x1="12" y1="20" x2="12" y2="10" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="18" y1="20" x2="18" y2="4" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="6" y1="20" x2="6" y2="16" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Transparence Thérapeutique</h3>
+              <p className="text-gray-600 text-sm">Communication dans votre langage</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Preuves Sociales - Résultats */}
+      {/* Résultats & Social Proof */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-custom">
-          <div className="text-center mb-16 fade-in-section">
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
-              Et ça, on l'a fait pour{' '}
-              <span className="text-[#DCB253]">+300 thérapeutes</span>{' '}
-              de 11 professions différentes
+              Nos{' '}
+              <span className="text-[#DCB253]">Résultats</span>{' '}
+              Documentés
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Et ils n'étaient pas plus avancés que vous quand ils ont commencé...
+              500+ thérapeutes transformés avec notre écosystème complet
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center fade-in-section">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-4xl font-black text-[#DCB253] mb-2">300+</div>
-                <p className="text-gray-600">Thérapeutes accompagnés</p>
+            <div className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div className="text-4xl font-black text-[#DCB253] mb-2">500+</div>
+                <p className="text-gray-600">Thérapeutes transformés</p>
               </div>
             </div>
-            <div className="text-center fade-in-section">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-4xl font-black text-[#DCB253] mb-2">11</div>
-                <p className="text-gray-600">Professions différentes</p>
+            <div className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div className="text-4xl font-black text-[#DCB253] mb-2">150k€+</div>
+                <p className="text-gray-600">CA mensuel clients</p>
               </div>
             </div>
-            <div className="text-center fade-in-section">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
                 <div className="text-4xl font-black text-[#DCB253] mb-2">90j</div>
                 <p className="text-gray-600">Transformation complète</p>
               </div>
             </div>
-            <div className="text-center fade-in-section">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-4xl font-black text-[#DCB253] mb-2">15k€</div>
-                <p className="text-gray-600">Revenus récurrents/mois</p>
+            <div className="text-center">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div className="text-4xl font-black text-[#DCB253] mb-2">3 actes</div>
+                <p className="text-gray-600">Méthode exclusive</p>
               </div>
             </div>
           </div>
 
           <div className="bg-gradient-to-r from-[#DCB253]/10 to-[#DCB253]/5 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">La Différence Thérapreneur</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">L'Écosystème de Transformation Digitale Thérapeutique</h3>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-              <strong>Ce n'est pas du hasard ou de la chance, ce sont des compétences.</strong> 
-              Et c'est normal si vous ne les avez pas ! Les écoles forment des praticiens, 
-              pas des entrepreneurs, alors qu'il faut être les 2 pour réussir.
+              <strong>Par des thérapeutes, pour des thérapeutes, avec une éthique inébranlable.</strong> 
+              Nous transformons votre expertise en empire digital éthique sans trahir vos valeurs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Le Choix Difficile */}
+      {/* CTA Final */}
       <section className="py-24 bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="particles-bg">
-            <div className="particle" style={{left: '10%', top: '20%'}}></div>
-            <div className="particle" style={{left: '40%', top: '60%'}}></div>
-            <div className="particle" style={{left: '80%', top: '30%'}}></div>
-          </div>
-        </div>
-        
         <div className="container-custom text-center relative z-10">
-          <div className="max-w-5xl mx-auto space-y-8 fade-in-section">
-            <h2 className="text-4xl lg:text-5xl font-black text-white mb-8">
-              Maintenant, vous avez un choix difficile à faire
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-4xl lg:text-5xl font-black text-white">
+              Prêt à transformer votre pratique ?
             </h2>
-            
-            <div className="grid lg:grid-cols-2 gap-8 text-left">
-              {/* Option 1 */}
-              <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
-                <h3 className="text-2xl font-bold text-white mb-4">❌ Option 1 : Revenir à la vie normale</h3>
-                <div className="space-y-3 text-white/90">
-                  <p>• Sans actions concrètes, rien ne changera vraiment</p>
-                  <p>• Dans 5 ans, vous serez au même point : même stress, même plafond</p>
-                  <p>• Vous aurez 5 ans de plus et moins d'énergie</p>
-                  <p>• Continuer à refuser des patients faute de créneaux</p>
-                </div>
-              </div>
-              
-              {/* Option 2 */}
-              <div className="bg-white rounded-2xl p-8 text-gray-900 border-4 border-white transform scale-105">
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-4">✅ Option 2 : Choisir que c'est le moment</h3>
-                <div className="space-y-3">
-                  <p>• <strong>"J'en ai marre de galérer, de voir que ça dure"</strong></p>
-                  <p>• <strong>"Je veux reprendre le contrôle sur mon activité"</strong></p>
-                  <p>• Avoir la méthode POV qui tourne en automatique</p>
-                  <p>• Doubler vos revenus en 90 jours sans prendre plus de patients</p>
-                </div>
-              </div>
-            </div>
-
-                <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mt-12">
-              <h3 className="text-2xl font-bold text-white mb-6">Prêt à structurer votre croissance ?</h3>
-              <p className="text-xl text-white mb-8">
-                Audit offert de votre écosystème actuel et plan d’action d’agence.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
-                <Link 
-                  href="/services" 
-                  className="btn-modern bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover-lift flex items-center justify-center gap-2"
-                >
-                  Réserver un audit offert
-                </Link>
-                <Link 
-                  href="/savoir-faire" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#DCB253] transition-all hover-lift"
-                >
-                  Voir notre approche
-                </Link>
-              </div>
-              
-              <p className="text-sm text-white/80 mt-6 max-w-3xl mx-auto">
-                <strong>Engagement d’agence :</strong> accompagnement jusqu’aux résultats définis ensemble.
-              </p>
+            <p className="text-xl lg:text-2xl text-white/90">
+              Rejoignez l'écosystème Thérapreneur et transformez votre expertise 
+              en empire digital éthique.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+              <a 
+                href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105"
+              >
+                🎯 Méthode POV Gratuite 🆓
+              </a>
+              <Link 
+                href="/services" 
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#DCB253] transition-all hover:shadow-lg transform hover:scale-105"
+              >
+                Découvrir l'écosystème
+              </Link>
             </div>
           </div>
       </div>
     </section>
-
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "DigitalMarketingAgency",
-            "name": "Thérapreneur",
-            "description": "Agence spécialisée en transformation digitale pour thérapeutes",
-            "url": "https://therapreneur.fr",
-            "logo": "https://therapreneur.fr/logo.png",
-            "areaServed": "France",
-            "serviceType": "Digital Marketing Agency",
-            "knowsAbout": [
-              "Transformation digitale thérapeutique",
-              "Marketing pour thérapeutes", 
-              "Accompagnement entrepreneurs santé",
-              "Stratégie digitale wellness"
-            ],
-            "hasCredential": "Agence spécialisée #1 en France",
-            "offers": [
-              {
-                "@type": "Service",
-                "name": "Formation DIY",
-                "description": "Formation complète en autonomie guidée",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "5000",
-                  "priceCurrency": "EUR"
-                }
-              },
-              {
-                "@type": "Service", 
-                "name": "Co-Création",
-                "description": "Accompagnement personnalisé d'agence",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "10500", 
-                  "priceCurrency": "EUR"
-                }
-              },
-              {
-                "@type": "Service",
-                "name": "Service Complet", 
-                "description": "L'agence fait tout pour vous",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "21000",
-                  "priceCurrency": "EUR" 
-                }
-              }
-            ]
-          })
-        }}
-      />
     </>
   );
 }
