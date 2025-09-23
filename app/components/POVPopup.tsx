@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ZapIcon, CheckCircleIcon } from './Icons';
+import { ZapIcon, CheckCircleIcon, TargetIcon } from './Icons';
 
 interface POVPopupProps {
   isOpen: boolean;
@@ -45,8 +45,9 @@ export default function POVPopup({ isOpen, onClose }: POVPopupProps) {
         {/* Content */}
         <div className="p-6 space-y-6">
           <div className="text-center">
-            <h4 className="text-2xl font-bold text-gray-900 mb-2">
-              🎯 Masterclass Gratuite
+            <h4 className="text-2xl font-bold text-gray-900 mb-2 inline-flex items-center gap-2 justify-center">
+              <TargetIcon size={22} />
+              <span>Masterclass Gratuite</span>
             </h4>
             <p className="text-gray-600">
               La méthode complète pour transformer votre expertise en revenus récurrents
@@ -86,7 +87,10 @@ export default function POVPopup({ isOpen, onClose }: POVPopupProps) {
               className="w-full bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white py-4 px-6 rounded-xl font-bold text-center hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 block"
               onClick={onClose}
             >
-              🎯 Accéder à la Méthode POV Gratuite
+              <span className="inline-flex items-center gap-2 justify-center">
+                <TargetIcon size={20} />
+                <span>Accéder à la Méthode POV Gratuite</span>
+              </span>
             </a>
             
             <button

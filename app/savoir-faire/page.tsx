@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { TargetIcon, RocketIcon, StarIcon } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Méthode Thérapreneur | Parcours de Transformation en 3 Actes',
@@ -36,7 +37,9 @@ export default function SavoirFairePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center mb-6">
-                <div className="text-6xl mr-4">🌱</div>
+                <div className="text-6xl mr-4 text-[#DCB253]">
+                  <StarIcon size={36} />
+                </div>
                 <div>
                   <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A]">
                     Acte 1 : <span className="text-[#DCB253]">Germination</span>
@@ -49,7 +52,7 @@ export default function SavoirFairePage() {
                 &quot;De l&apos;expertise cachée à l&apos;offre signature&quot;
               </blockquote>
               
-              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">🎯 Objectif</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Objectif</h3>
               <p className="text-lg text-gray-700 mb-8">
                 Cristalliser votre expertise en offre high-ticket irrésistible. 
                 Cette phase pose les fondations de votre transformation digitale.
@@ -57,18 +60,18 @@ export default function SavoirFairePage() {
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">🚀 Livrables Clés</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Livrables Clés</h3>
               <div className="space-y-4">
                 <div className="bg-white rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">✨ Positionnement unique</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Positionnement unique</h4>
                   <p className="text-sm text-gray-600">Votre singularité thérapeutique clarifiée</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">💎 Offre transformationnelle</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Offre transformationnelle</h4>
                   <p className="text-sm text-gray-600">Programme 3-6 mois à 2000-5000€</p>
                 </div>
                 <div className="bg-white rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">🏗️ Écosystème digital</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Écosystème digital</h4>
                   <p className="text-sm text-gray-600">Outils et structure en place</p>
                 </div>
               </div>
@@ -101,7 +104,9 @@ export default function SavoirFairePage() {
             
             <div className="order-1 lg:order-2">
               <div className="flex items-center mb-6">
-                <div className="text-6xl mr-4">🚀</div>
+              <div className="text-6xl mr-4 text-[#DCB253]">
+                <RocketIcon size={36} />
+              </div>
                 <div>
                   <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A]">
                     Acte 2 : <span className="text-[#DCB253]">Floraison</span>
@@ -114,7 +119,7 @@ export default function SavoirFairePage() {
                 &quot;Du cabinet local à l&apos;expert digital&quot;
               </blockquote>
               
-              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">🎯 Objectif</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Objectif</h3>
               <p className="text-lg text-gray-700 mb-8">
                 Lancer votre présence digitale et signer vos premiers clients online. 
                 Phase d&apos;activation et de mise en marché.
@@ -151,18 +156,18 @@ export default function SavoirFairePage() {
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
-              <h3 className="text-2xl font-bold mb-6 text-white">🌟 Livrables Clés</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Livrables Clés</h3>
               <div className="space-y-4">
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">📊 Optimisation conversions</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Optimisation conversions</h4>
                   <p className="text-sm text-gray-300">+30% taux de transformation</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">🤖 Automation maximale</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Automation maximale</h4>
                   <p className="text-sm text-gray-300">80% du process automatisé</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4 border border-[#DCB253]/20">
-                  <h4 className="font-bold text-[#DCB253] mb-2">🚀 Vision 12 mois</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Vision 12 mois</h4>
                   <p className="text-sm text-gray-300">Roadmap scaling définie</p>
                 </div>
               </div>

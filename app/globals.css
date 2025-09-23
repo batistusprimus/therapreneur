@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1200px;
+  }
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out forwards;
   }
@@ -121,7 +125,12 @@
   }
 
   .button-gradient {
-    @apply bg-gradient-to-r from-[#DCB253] to-[#1A1A1A] hover:from-[#C9A046] hover:to-[#2A2A2A] transition-all duration-300;
+    @apply transition-all duration-300;
+    background-color: #1A1A1A;
+  }
+
+  .button-gradient:hover {
+    background-color: #2A2A2A;
   }
 }
 

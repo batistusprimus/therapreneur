@@ -1,7 +1,20 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
+import { 
+  UsersIcon,
+  BrainIcon,
+  TargetIcon,
+  LayersIcon,
+  StarIcon,
+  ZapIcon,
+  SettingsIcon,
+  MegaphoneIcon,
+  BarChartIcon,
+  RocketIcon,
+  TrendingUpIcon
+} from './Icons';
 
 // Types pour l'arbre de décision
 type UserType = 'solopreneur' | 'agence';
@@ -11,7 +24,7 @@ type MainGoal = 'mindset' | 'offre' | 'acquisition' | 'contenu' | 'vente' | 'sca
 type ChatOption = {
   id: string;
   title: string;
-  icon: string;
+  icon: ReactNode;
   description: string;
 };
 
@@ -19,7 +32,7 @@ type Module = {
   id: number;
   title: string;
   description: string;
-  icon: string;
+  icon: ReactNode;
   color: string;
   href: string;
 };
@@ -73,13 +86,13 @@ const chatTree: ChatTree = {
     {
       id: 'solopreneur',
       title: 'Je suis Solopreneur',
-      icon: '👤',
+      icon: <UsersIcon size={18} />,
       description: 'Je gère mon business B2B en solo'
     },
     {
       id: 'agence',
       title: 'Je suis CEO d\'agence',
-      icon: '👥',
+      icon: <UsersIcon size={18} />,
       description: 'Je dirige une agence ou une équipe en B2B'
     }
   ],
@@ -90,19 +103,19 @@ const chatTree: ChatTree = {
         {
           id: 'debutant',
           title: 'Je débute mon activité',
-          icon: '🌱',
+          icon: <LayersIcon size={18} />,
           description: 'Je commence à construire mon business B2B'
         },
         {
           id: 'intermediaire',
           title: 'Je commence à avoir des résultats',
-          icon: '🚀',
+          icon: <RocketIcon size={18} />,
           description: 'J\'ai quelques clients et je souhaite accélérer'
         },
         {
           id: 'avance',
           title: 'Mon business est bien établi',
-          icon: '💫',
+          icon: <StarIcon size={18} />,
           description: 'Mon activité tourne bien, je vise la croissance'
         }
       ]
@@ -113,19 +126,19 @@ const chatTree: ChatTree = {
         {
           id: 'debutant',
           title: 'Nous sommes en phase de lancement',
-          icon: '🌱',
+          icon: <LayersIcon size={18} />,
           description: 'Nous développons notre clientèle et nos processus'
         },
         {
           id: 'intermediaire',
           title: 'Nous avons une croissance stable',
-          icon: '🚀',
+          icon: <RocketIcon size={18} />,
           description: 'Nous avons des clients réguliers et visons plus'
         },
         {
           id: 'avance',
           title: 'Nous sommes bien établis',
-          icon: '💫',
+          icon: <StarIcon size={18} />,
           description: 'Nous avons une forte présence et optimisons'
         }
       ]
@@ -138,19 +151,19 @@ const chatTree: ChatTree = {
         {
           id: 'mindset',
           title: 'Je manque de confiance et de clarté',
-          icon: '🧠',
+          icon: <BrainIcon size={18} />,
           description: 'Je ne suis pas certain de ma direction'
         },
         {
           id: 'offre',
           title: 'Mon offre ne convainc pas assez',
-          icon: '💎',
+          icon: <StarIcon size={18} />,
           description: 'J\'ai du mal à communiquer ma valeur'
         },
         {
           id: 'acquisition',
           title: 'Je peine à trouver des clients',
-          icon: '🎯',
+          icon: <TargetIcon size={18} />,
           description: 'Je cherche à attirer les bons prospects'
         }
       ]
@@ -161,19 +174,19 @@ const chatTree: ChatTree = {
         {
           id: 'contenu',
           title: 'Je veux mieux convertir mes prospects',
-          icon: '📚',
+          icon: <MegaphoneIcon size={18} />,
           description: 'Mes prospects ne perçoivent pas assez ma valeur'
         },
         {
           id: 'vente',
           title: 'Je veux développer mes ventes',
-          icon: '💰',
+          icon: <TrendingUpIcon size={18} />,
           description: 'J\'ai des prospects mais je convertis peu'
         },
         {
           id: 'scaling',
           title: 'Je veux passer à l\'échelle',
-          icon: '⚡',
+          icon: <ZapIcon size={18} />,
           description: 'Je ne peux pas prendre plus de clients actuellement'
         }
       ]
@@ -184,19 +197,19 @@ const chatTree: ChatTree = {
         {
           id: 'scaling',
           title: 'Je veux automatiser et déléguer',
-          icon: '⚡',
+          icon: <ZapIcon size={18} />,
           description: 'Optimiser mon temps et augmenter mes revenus'
         },
         {
           id: 'contenu',
           title: 'Je veux renforcer mon autorité',
-          icon: '📚',
+          icon: <MegaphoneIcon size={18} />,
           description: 'Devenir une référence dans mon domaine'
         },
         {
           id: 'vente',
           title: 'Je veux optimiser mes conversions',
-          icon: '💰',
+          icon: <TrendingUpIcon size={18} />,
           description: 'Améliorer chaque étape de mon processus de vente'
         }
       ]
@@ -206,89 +219,89 @@ const chatTree: ChatTree = {
     'solopreneur-debutant-mindset': {
       message: "Je comprends ta situation. Voici ton parcours personnalisé :",
       modules: [
-        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter l\'état d\'esprit qui mène au succès', icon: '🧠', color: '#9F99EB' },
-        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Structurer ton offre pour la rendre irrésistible', icon: '💎', color: '#FF9800' },
-        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place tes canaux d\'acquisition', icon: '🎯', color: '#4CAF50' }
+        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter l\'état d\'esprit qui mène au succès', icon: <BrainIcon size={18} />, color: '#9F99EB' },
+        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Structurer ton offre pour la rendre irrésistible', icon: <StarIcon size={18} />, color: '#FF9800' },
+        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place tes canaux d\'acquisition', icon: <TargetIcon size={18} />, color: '#4CAF50' }
       ]
     },
     'solopreneur-debutant-offre': {
       message: "Voici ton parcours personnalisé pour renforcer ton offre :",
       modules: [
-        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Transformer ton expertise en une offre qui se vend', icon: '💎', color: '#FF9800' },
-        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter la confiance nécessaire pour vendre', icon: '🧠', color: '#9F99EB' },
-        { id: 4, title: 'Éduquer tes prospects', href: '/masterclass/module4', description: 'Créer un tunnel de conversion efficace', icon: '📚', color: '#E91E63' }
+        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Transformer ton expertise en une offre qui se vend', icon: <StarIcon size={18} />, color: '#FF9800' },
+        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter la confiance nécessaire pour vendre', icon: <BrainIcon size={18} />, color: '#9F99EB' },
+        { id: 4, title: 'Éduquer tes prospects', href: '/masterclass/module4', description: 'Créer un tunnel de conversion efficace', icon: <MegaphoneIcon size={18} />, color: '#E91E63' }
       ]
     },
     'solopreneur-debutant-acquisition': {
       message: "Voici ton parcours personnalisé pour développer ton acquisition :",
       modules: [
-        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place des canaux d\'acquisition performants', icon: '🎯', color: '#4CAF50' },
-        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Développer une communauté de prospects qualifiés', icon: '📧', color: '#2196F3' },
-        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Créer une offre qui attire naturellement', icon: '💎', color: '#FF9800' }
+        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place des canaux d\'acquisition performants', icon: <TargetIcon size={18} />, color: '#4CAF50' },
+        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Développer une communauté de prospects qualifiés', icon: <MegaphoneIcon size={18} />, color: '#2196F3' },
+        { id: 1, title: 'Créer son offre irrésistible', href: '/masterclass/module1', description: 'Créer une offre qui attire naturellement', icon: <StarIcon size={18} />, color: '#FF9800' }
       ]
     },
     'solopreneur-intermediaire-contenu': {
       message: "Voici ton parcours personnalisé pour améliorer tes conversions :",
       modules: [
-        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Éduquer tes prospects pour qu\'ils achètent naturellement', icon: '📚', color: '#E91E63' },
-        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Rédiger des textes qui convertissent', icon: '✍️', color: '#9C27B0' },
-        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Créer une communauté qui te fait confiance', icon: '📧', color: '#2196F3' }
+        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Éduquer tes prospects pour qu\'ils achètent naturellement', icon: <MegaphoneIcon size={18} />, color: '#E91E63' },
+        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Rédiger des textes qui convertissent', icon: <SettingsIcon size={18} />, color: '#9C27B0' },
+        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Créer une communauté qui te fait confiance', icon: <MegaphoneIcon size={18} />, color: '#2196F3' }
       ]
     },
     'solopreneur-intermediaire-vente': {
       message: "Voici ton parcours personnalisé pour développer tes ventes :",
       modules: [
-        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Apprendre à présenter ta valeur de manière irrésistible', icon: '✍️', color: '#9C27B0' },
-        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: '🤝', color: '#FF5722' },
-        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Créer un tunnel qui facilite la décision', icon: '📚', color: '#E91E63' }
+        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Apprendre à présenter ta valeur de manière irrésistible', icon: <SettingsIcon size={18} />, color: '#9C27B0' },
+        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: <UsersIcon size={18} />, color: '#FF5722' },
+        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Créer un tunnel qui facilite la décision', icon: <MegaphoneIcon size={18} />, color: '#E91E63' }
       ]
     },
     'solopreneur-intermediaire-scaling': {
       message: "Voici ton parcours personnalisé pour passer à l'échelle :",
       modules: [
-        { id: 7, title: 'Tout pour closer en B2B', href: '/masterclass/module7', description: 'Mettre en place des systèmes qui travaillent pour toi', icon: '⚡', color: '#00BCD4' },
-        { id: 8, title: 'Satisfaire ses clients', href: '/masterclass/module8', description: 'Optimiser chaque aspect de ton business', icon: '⚙️', color: '#607D8B' },
-        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: '🤝', color: '#FF5722' }
+        { id: 7, title: 'Tout pour closer en B2B', href: '/masterclass/module7', description: 'Mettre en place des systèmes qui travaillent pour toi', icon: <ZapIcon size={18} />, color: '#00BCD4' },
+        { id: 8, title: 'Satisfaire ses clients', href: '/masterclass/module8', description: 'Optimiser chaque aspect de ton business', icon: <SettingsIcon size={18} />, color: '#607D8B' },
+        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: <UsersIcon size={18} />, color: '#FF5722' }
       ]
     },
     'agence-debutant-mindset': {
       message: "Voici ton parcours personnalisé pour développer ton agence :",
       modules: [
-        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter l\'état d\'esprit qui mène à la croissance', icon: '🧠', color: '#9F99EB' },
-        { id: 1, title: 'Structurer tes services', href: '/masterclass/module1', description: 'Créer des offres qui se vendent naturellement', icon: '💎', color: '#FF9800' },
-        { id: 8, title: 'Mettre en place tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent la croissance', icon: '⚙️', color: '#607D8B' }
+        { id: 0, title: 'Mindset', href: '/masterclass/module0', description: 'Adopter l\'état d\'esprit qui mène à la croissance', icon: <BrainIcon size={18} />, color: '#9F99EB' },
+        { id: 1, title: 'Structurer tes services', href: '/masterclass/module1', description: 'Créer des offres qui se vendent naturellement', icon: <StarIcon size={18} />, color: '#FF9800' },
+        { id: 8, title: 'Mettre en place tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent la croissance', icon: <SettingsIcon size={18} />, color: '#607D8B' }
       ]
     },
     'agence-debutant-offre': {
       message: "Voici ton parcours personnalisé pour renforcer tes services :",
       modules: [
-        { id: 1, title: 'Créer des offres irrésistibles', href: '/masterclass/module1', description: 'Structurer tes services pour qu\'ils se vendent', icon: '💎', color: '#FF9800' },
-        { id: 8, title: 'Mettre en place tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent la vente', icon: '⚙️', color: '#607D8B' },
-        { id: 7, title: 'Préparer ta croissance', href: '/masterclass/module7', description: 'Mettre en place les bases de ton scaling', icon: '⚡', color: '#00BCD4' }
+        { id: 1, title: 'Créer des offres irrésistibles', href: '/masterclass/module1', description: 'Structurer tes services pour qu\'ils se vendent', icon: <StarIcon size={18} />, color: '#FF9800' },
+        { id: 8, title: 'Mettre en place tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent la vente', icon: <SettingsIcon size={18} />, color: '#607D8B' },
+        { id: 7, title: 'Préparer ta croissance', href: '/masterclass/module7', description: 'Mettre en place les bases de ton scaling', icon: <ZapIcon size={18} />, color: '#00BCD4' }
       ]
     },
     'agence-debutant-acquisition': {
       message: "Voici ton parcours personnalisé pour développer ton acquisition :",
       modules: [
-        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place des canaux d\'acquisition performants', icon: '🎯', color: '#4CAF50' },
-        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Développer une communauté de prospects qualifiés', icon: '📧', color: '#2196F3' },
-        { id: 8, title: 'Optimiser tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent l\'acquisition', icon: '⚙️', color: '#607D8B' }
+        { id: 2, title: 'Acquisition', href: '/masterclass/module2', description: 'Mettre en place des canaux d\'acquisition performants', icon: <TargetIcon size={18} />, color: '#4CAF50' },
+        { id: 3, title: 'Newsletter & Communauté', href: '/masterclass/module3', description: 'Développer une communauté de prospects qualifiés', icon: <MegaphoneIcon size={18} />, color: '#2196F3' },
+        { id: 8, title: 'Optimiser tes processus', href: '/masterclass/module8', description: 'Créer des systèmes qui facilitent l\'acquisition', icon: <SettingsIcon size={18} />, color: '#607D8B' }
       ]
     },
     'agence-intermediaire-contenu': {
       message: "Voici ton parcours personnalisé pour optimiser ton contenu :",
       modules: [
-        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Éduquer tes prospects pour qu\'ils achètent naturellement', icon: '📚', color: '#E91E63' },
-        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Rédiger des textes qui convertissent', icon: '✍️', color: '#9C27B0' },
-        { id: 8, title: 'Automatiser ton contenu', href: '/masterclass/module8', description: 'Créer des systèmes qui génèrent du contenu efficace', icon: '⚙️', color: '#607D8B' }
+        { id: 4, title: 'Éduquer ses prospects', href: '/masterclass/module4', description: 'Éduquer tes prospects pour qu\'ils achètent naturellement', icon: <MegaphoneIcon size={18} />, color: '#E91E63' },
+        { id: 5, title: 'L\'art de faire des VSL', href: '/masterclass/module5', description: 'Rédiger des textes qui convertissent', icon: <SettingsIcon size={18} />, color: '#9C27B0' },
+        { id: 8, title: 'Automatiser ton contenu', href: '/masterclass/module8', description: 'Créer des systèmes qui génèrent du contenu efficace', icon: <SettingsIcon size={18} />, color: '#607D8B' }
       ]
     },
     'agence-intermediaire-vente': {
       message: "Voici ton parcours personnalisé pour optimiser tes ventes :",
       modules: [
-        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: '🤝', color: '#FF5722' },
-        { id: 8, title: 'Créer des processus de vente', href: '/masterclass/module8', description: 'Mettre en place des systèmes qui convertissent', icon: '⚙️', color: '#607D8B' },
-        { id: 7, title: 'Automatiser ta vente', href: '/masterclass/module7', description: 'Libérer ton temps tout en augmentant les ventes', icon: '⚡', color: '#00BCD4' }
+        { id: 6, title: 'Setting', href: '/masterclass/module6', description: 'Transformer tes appels en rendez-vous gagnés', icon: <UsersIcon size={18} />, color: '#FF5722' },
+        { id: 8, title: 'Créer des processus de vente', href: '/masterclass/module8', description: 'Mettre en place des systèmes qui convertissent', icon: <SettingsIcon size={18} />, color: '#607D8B' },
+        { id: 7, title: 'Automatiser ta vente', href: '/masterclass/module7', description: 'Libérer ton temps tout en augmentant les ventes', icon: <ZapIcon size={18} />, color: '#00BCD4' }
       ]
     },
     'agence-intermediaire-scaling': {
@@ -302,25 +315,25 @@ const chatTree: ChatTree = {
     'agence-avance-scaling': {
       message: "Voici ton parcours personnalisé pour optimiser ton agence :",
       modules: [
-        { id: 7, title: 'Automatisation avancée', href: '/masterclass/module7', description: 'Créer des systèmes qui génèrent des revenus passifs', icon: '⚡', color: '#00BCD4' },
-        { id: 8, title: 'Optimisation des processus', href: '/masterclass/module8', description: 'Affiner chaque aspect de ton agence', icon: '⚙️', color: '#607D8B' },
-        { id: 9, title: 'Stratégies avancées', href: '/masterclass/module9', description: 'Découvrir les techniques des meilleures agences', icon: '📊', color: '#795548' }
+        { id: 7, title: 'Automatisation avancée', href: '/masterclass/module7', description: 'Créer des systèmes qui génèrent des revenus passifs', icon: <ZapIcon size={18} />, color: '#00BCD4' },
+        { id: 8, title: 'Optimisation des processus', href: '/masterclass/module8', description: 'Affiner chaque aspect de ton agence', icon: <SettingsIcon size={18} />, color: '#607D8B' },
+        { id: 9, title: 'Stratégies avancées', href: '/masterclass/module9', description: 'Découvrir les techniques des meilleures agences', icon: <BarChartIcon size={18} />, color: '#795548' }
       ]
     },
     'agence-avance-contenu': {
       message: "Voici ton parcours personnalisé pour devenir une référence :",
       modules: [
-        { id: 4, title: 'Stratégie de contenu avancée', href: '/masterclass/module4', description: 'Créer un contenu qui positionne ton agence comme leader', icon: '📚', color: '#E91E63' },
-        { id: 5, title: 'Copywriting avancé', href: '/masterclass/module5', description: 'Maîtriser l\'art de la persuasion à haut niveau', icon: '✍️', color: '#9C27B0' },
-        { id: 9, title: 'Études de cas avancées', href: '/masterclass/module9', description: 'Apprendre des meilleures stratégies de contenu', icon: '📊', color: '#795548' }
+        { id: 4, title: 'Stratégie de contenu avancée', href: '/masterclass/module4', description: 'Créer un contenu qui positionne ton agence comme leader', icon: <MegaphoneIcon size={18} />, color: '#E91E63' },
+        { id: 5, title: 'Copywriting avancé', href: '/masterclass/module5', description: 'Maîtriser l\'art de la persuasion à haut niveau', icon: <SettingsIcon size={18} />, color: '#9C27B0' },
+        { id: 9, title: 'Études de cas avancées', href: '/masterclass/module9', description: 'Apprendre des meilleures stratégies de contenu', icon: <BarChartIcon size={18} />, color: '#795548' }
       ]
     },
     'agence-avance-vente': {
       message: "Voici ton parcours personnalisé pour maximiser tes conversions :",
       modules: [
-        { id: 6, title: 'Techniques avancées de vente', href: '/masterclass/module6', description: 'Maîtriser l\'art de la vente à haut niveau', icon: '🤝', color: '#FF5722' },
-        { id: 8, title: 'Optimisation des processus de vente', href: '/masterclass/module8', description: 'Affiner chaque étape de ton processus', icon: '⚙️', color: '#607D8B' },
-        { id: 9, title: 'Stratégies de conversion avancées', href: '/masterclass/module9', description: 'Découvrir les techniques des meilleures agences', icon: '📊', color: '#795548' }
+        { id: 6, title: 'Techniques avancées de vente', href: '/masterclass/module6', description: 'Maîtriser l\'art de la vente à haut niveau', icon: <UsersIcon size={18} />, color: '#FF5722' },
+        { id: 8, title: 'Optimisation des processus de vente', href: '/masterclass/module8', description: 'Affiner chaque étape de ton processus', icon: <SettingsIcon size={18} />, color: '#607D8B' },
+        { id: 9, title: 'Stratégies de conversion avancées', href: '/masterclass/module9', description: 'Découvrir les techniques des meilleures agences', icon: <BarChartIcon size={18} />, color: '#795548' }
       ]
     }
   }

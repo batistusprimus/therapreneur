@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 // Suppression du CTA "Méthode POV Gratuite" pour positionnement agence
+import { TargetIcon } from '@/components/Icons';
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,10 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
             className="button-gradient text-white px-4 py-2 rounded-lg font-bold text-sm ml-2 shadow-md"
           >
-            🎯 Méthode POV Gratuite
+            <span className="inline-flex items-center gap-2">
+              <TargetIcon size={18} />
+              <span>Méthode POV Gratuite</span>
+            </span>
           </a>
         </nav>
 
@@ -67,7 +71,10 @@ export default function SiteHeader() {
             onClick={() => setIsMenuOpen(false)}
             className="button-gradient text-white px-4 py-3 rounded-lg font-bold text-center transition-all mx-4 mt-2 shadow-md"
           >
-            🎯 Méthode POV Gratuite
+            <span className="inline-flex items-center gap-2 justify-center">
+              <TargetIcon size={18} />
+              <span>Méthode POV Gratuite</span>
+            </span>
           </a>
         </nav>
       </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon } from './Icons';
+import { XMarkIcon, TargetIcon, RocketIcon } from './Icons';
 
 export default function POVBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,11 +60,9 @@ export default function POVBanner() {
             {/* Contenu */}
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">🎯</span>
+                <TargetIcon size={20} />
                 <h3 className="font-bold text-lg">Méthode POV Gratuite</h3>
-                <span className="bg-white/20 px-2 py-1 rounded-full text-xs font-bold animate-pulse">
-                  🆓 GRATUIT
-                </span>
+                <span className="bg-white/20 px-2 py-1 rounded-full text-xs font-bold animate-pulse">GRATUIT</span>
               </div>
               
               <p className="text-sm text-white/90 mb-4">
@@ -90,12 +88,13 @@ export default function POVBanner() {
                 onClick={handleRedirect}
                 className="w-full bg-white text-[#DCB253] py-3 px-4 rounded-lg font-bold text-sm hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                🚀 Accéder Maintenant
+                <span className="inline-flex items-center gap-2 justify-center">
+                  <RocketIcon size={18} />
+                  <span>Accéder Maintenant</span>
+                </span>
               </button>
               
-              <p className="text-xs text-white/70 text-center mt-2">
-                ⏰ Accès gratuit - Temps limité
-              </p>
+              <p className="text-xs text-white/70 text-center mt-2">Accès gratuit - Temps limité</p>
             </div>
           </div>
         </motion.div>

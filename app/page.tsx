@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { TargetIcon, XMarkIcon, CheckCircleIcon } from '@/components/Icons';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 export const metadata: Metadata = {
   title: 'Thérapreneur | Comment 300 thérapeutes ont doublé leurs revenus en 90 jours',
@@ -15,50 +17,75 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <div className="container-custom py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-b from-white to-slate-50">
+        {/* Decorative halos */}
+        <div className="pointer-events-none absolute -top-40 -left-40 h-[48rem] w-[48rem] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(220,178,83,0.18),transparent_60%)] blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -right-40 h-[48rem] w-[48rem] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(220,178,83,0.14),transparent_60%)] blur-3xl" />
+
+        <div className="container-custom py-24 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-10">
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#DCB253]/10 to-[#DCB253]/5 px-4 py-2 rounded-full border border-[#DCB253]/20">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-[#DCB253]">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#DCB253]/30 bg-white/60 backdrop-blur supports-[backdrop-filter]:backdrop-blur-md shadow-sm">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-[#DCB253]">
                     <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   <span className="text-sm font-medium text-gray-700">+300 thérapeutes ont doublé leurs revenus en 90 jours</span>
                 </div>
-                
-                <h1 className="text-6xl lg:text-7xl font-black leading-tight text-gray-900">
+
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-gray-900 tracking-tight mx-auto">
                   Comment j&apos;ai aidé{' '}
-                  <span className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 bg-clip-text text-transparent">300 thérapeutes</span>{' '}
+                  <span className="relative inline-block">
+                    <span className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 bg-clip-text text-transparent">300 thérapeutes</span>
+                    <span className="absolute -bottom-1 left-0 right-0 h-2 rounded-full bg-[#DCB253]/20" />
+                  </span>{' '}
                   à doubler leurs revenus en 90 jours
                 </h1>
-                
-                <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
-                  Grâce au <strong>digital</strong>, sans prendre un seul patient supplémentaire. 
-                  La méthode POV qui transforme votre expertise en programmes digitaux haute valeur 
-                  et génère <strong>5 000€ à 15 000€ de revenus récurrents par mois</strong>.
+
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                  Grâce au <strong>digital</strong>, sans prendre un seul patient supplémentaire. La méthode POV
+                  transforme votre expertise en programmes digitaux haute valeur et génère
+                  <strong> 5 000€ à 15 000€ de revenus récurrents par mois</strong>.
                 </p>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center gap-2 justify-center"
+                  className="group relative overflow-hidden bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DCB253]/50"
                 >
-                  🎯 Accéder à la Méthode POV Gratuite
-                  <span className="animate-pulse">🆓</span>
+                  <span className="relative z-10 flex items-center gap-2 justify-center">
+                    <TargetIcon size={20} />
+                    <span>Accéder à la Méthode POV Gratuite</span>
+                  </span>
+                  <span className="absolute inset-0 translate-x-[-120%] bg-white/20 blur-xl transition-transform duration-700 ease-out group-hover:translate-x-[120%]" />
                 </a>
-                <Link 
-                  href="/services" 
-                  className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all hover:shadow-lg transform hover:scale-105"
+                <Link
+                  href="/services"
+                  className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all shadow-sm hover:shadow-lg"
                 >
                   Voir nos offres
                 </Link>
               </div>
 
-              {/* Stats - Modern Cards */}
+              <div className="pt-2">
+                <div className="mx-auto inline-flex items-center gap-3 rounded-full bg-white/80 backdrop-blur px-5 py-2.5 border border-gray-200 shadow-md">
+                  <div className="h-8 w-8 rounded-full bg-[#DCB253]/20 flex items-center justify-center">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-[#DCB253]">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">
+                    Déjà <strong className="text-gray-900"><AnimatedCounter end={300} suffix="+" /></strong> thérapeutes accompagnés
+                  </span>
+                </div>
+              </div>
+
               <div className="grid grid-cols-3 gap-4 pt-8">
                 <div className="bg-white rounded-xl p-4 text-center shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#DCB253] mx-auto mb-2">
@@ -85,21 +112,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-            <div className="relative">
-              {/* Modern visual */}
-              <div className="bg-gradient-to-br from-[#DCB253] to-[#DCB253]/80 rounded-3xl p-12 text-white shadow-2xl">
-                <div className="text-center space-y-6">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" className="mx-auto text-white">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
-                  </svg>
-                  <h3 className="text-3xl font-bold">L'Écosystème Thérapreneur</h3>
-                  <p className="text-lg opacity-90">
-                    Transformation digitale spécialisée pour thérapeutes entrepreneurs
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -120,7 +132,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div className="space-y-8">
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-                <h3 className="text-xl font-bold text-red-800 mb-4">❌ Les signes du piège :</h3>
+                <h3 className="text-xl font-bold text-red-800 mb-4 inline-flex items-center gap-2">
+                  <XMarkIcon size={18} />
+                  <span>Les signes du piège :</span>
+                </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• Vous facturez entre 3 000€ et 8 000€/mois mais votre agenda est saturé</li>
                   <li>• Vous refusez 5-10 patients/semaine faute de créneaux (18k€-36k€/an perdus)</li>
@@ -132,7 +147,10 @@ export default function Home() {
             
             <div className="space-y-8">
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                <h3 className="text-xl font-bold text-green-800 mb-4">✅ La solution Thérapreneur :</h3>
+                <h3 className="text-xl font-bold text-green-800 mb-4 inline-flex items-center gap-2">
+                  <CheckCircleIcon size={18} />
+                  <span>La solution Thérapreneur :</span>
+                </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li>• <strong>Transformer votre expertise</strong> en empire digital éthique</li>
                   <li>• Créer des <strong>revenus scalables</strong> sans perdre vos valeurs</li>
@@ -172,13 +190,15 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-[#DCB253]/10 hover:shadow-xl transition-all hover:scale-105">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
+                    <rect x="3" y="4" width="14" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M7 8h6M7 12h6M7 16h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M19 2v14l-3-2-3 2V2h6z" fill="currentColor"/>
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">DIY</h3>
                 <p className="text-gray-600 mb-4">"L'Autonomie Guidée"</p>
-                <div className="text-4xl font-black text-[#DCB253]">5.000€</div>
+                {/* Prix retiré */}
               </div>
               
               <div className="space-y-3 mb-6">
@@ -219,7 +239,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">DWY</h3>
                 <p className="text-gray-600 mb-4">"La Co-Création"</p>
-                <div className="text-4xl font-black text-[#DCB253]">10.500€</div>
+                {/* Prix retiré */}
               </div>
               
               <div className="space-y-3 mb-6">
@@ -256,7 +276,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">DFY</h3>
                 <p className="text-gray-600 mb-4">"Transformation Clé en Main"</p>
-                <div className="text-4xl font-black text-[#DCB253]">21.000€</div>
+                {/* Prix retiré */}
               </div>
               
               <div className="space-y-3 mb-6">
@@ -303,7 +323,7 @@ export default function Home() {
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path d="M20.84 4.61C20.3 4.07 19.7 3.64 19 3.35C18.3 3.06 17.6 2.92 16.9 2.92C16.2 2.92 15.5 3.06 14.8 3.35L12 5.61L11.04 4.61C9.9 3.46 8.35 2.92 6.8 3.08L3.64 14.86L12 23L20.36 14.86Z" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Éthique Préservée</h3>
@@ -313,8 +333,8 @@ export default function Home() {
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-[#DCB253] to-[#DCB253]/70 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M19.4 15C19.2 15.3 19.1 15.7 19.1 16.1L20.6 19L18.6 20.9L16.5 18.9C16.1 19.1 15.6 19.2 15.1 19.2L12.5 20.7L11.6 20.9L10.8 17.2Z" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M3 17l6-6 4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 7v10h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Transition Progressive</h3>
@@ -369,14 +389,14 @@ export default function Home() {
               Documentés
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              500+ thérapeutes transformés avec notre écosystème complet
+              300+ thérapeutes transformés avec notre écosystème complet
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             <div className="text-center">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
-                <div className="text-4xl font-black text-[#DCB253] mb-2">500+</div>
+                <div className="text-4xl font-black text-[#DCB253] mb-2">300+</div>
                 <p className="text-gray-600">Thérapeutes transformés</p>
               </div>
             </div>
@@ -428,7 +448,10 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105"
               >
-                🎯 Méthode POV Gratuite 🆓
+                <span className="inline-flex items-center gap-2">
+                  <TargetIcon size={20} />
+                  <span>Méthode POV Gratuite</span>
+                </span>
               </a>
               <Link 
                 href="/services" 

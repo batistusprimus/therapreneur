@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { BarChartIcon, EyeIcon, UsersIcon, TargetIcon, LayersIcon } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Équipe Thérapreneur | Fondateurs et experts en transformation digitale thérapeutique',
@@ -65,7 +66,7 @@ export default function EquipePage() {
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">📊 Notre Transformation Documentée</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Notre Transformation Documentée</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-black text-[#DCB253] mb-2">0€</div>
@@ -80,7 +81,7 @@ export default function EquipePage() {
                   <div className="text-sm text-gray-600">Mois de croissance</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-[#DCB253] mb-2">500+</div>
+                  <div className="text-3xl font-black text-[#DCB253] mb-2">300+</div>
                   <div className="text-sm text-gray-600">Thérapeutes transformés</div>
                 </div>
               </div>
@@ -104,40 +105,40 @@ export default function EquipePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🌱</span>
+              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                <LayersIcon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Éthique Préservée</h3>
               <p className="text-gray-700 text-sm">Vos valeurs thérapeutiques restent au centre</p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🔍</span>
+              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                <EyeIcon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Transparence Totale</h3>
               <p className="text-gray-700 text-sm">Métriques adaptées à votre pratique</p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🤝</span>
+              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                <UsersIcon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Accompagnement Holistique</h3>
               <p className="text-gray-700 text-sm">Support technique ET humain</p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🎯</span>
+              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                <TargetIcon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Expertise Valorisée</h3>
               <p className="text-gray-700 text-sm">Votre méthode devient un actif scalable</p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🔄</span>
+              <div className="w-20 h-20 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                <BarChartIcon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Transition Progressive</h3>
               <p className="text-gray-700 text-sm">Cabinet maintenu pendant la transition</p>
@@ -164,8 +165,8 @@ export default function EquipePage() {
             {/* CEO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🧭</span>
+                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                  <EyeIcon size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Théo Gorbinkoff</h3>
                 <p className="text-gray-300">CEO & Co-Fondateur</p>
@@ -186,8 +187,8 @@ export default function EquipePage() {
             {/* COO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">⚙️</span>
+                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                  <LayersIcon size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Rémi Bouder</h3>
                 <p className="text-gray-300">COO & Co-Fondateur</p>
@@ -208,8 +209,8 @@ export default function EquipePage() {
             {/* CMO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📣</span>
+                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                  <BarChartIcon size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Baptiste Piocelle</h3>
                 <p className="text-gray-300">CMO & Co-Fondateur</p>
@@ -230,8 +231,8 @@ export default function EquipePage() {
             {/* CSM */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
-                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🤝</span>
+                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                  <UsersIcon size={32} />
                 </div>
                 <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Olivier Martin</h3>
                 <p className="text-gray-300">CSM</p>
@@ -267,7 +268,7 @@ export default function EquipePage() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-[#1A1A1A]">🌟 Nous croyons que :</h3>
+              <h3 className="text-2xl font-bold text-[#1A1A1A]">Nous croyons que :</h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-[#DCB253] pl-4">
                   <p className="text-gray-700">
@@ -298,10 +299,10 @@ export default function EquipePage() {
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">🎯 Notre Posture</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Notre Posture</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-[#DCB253] mb-2">✅ Ce que nous sommes</h4>
+                  <h4 className="font-bold text-[#DCB253] mb-2">Ce que nous sommes</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li>• <strong>Traducteurs :</strong> Business ↔ Thérapeutique</li>
                     <li>• <strong>Architectes :</strong> De votre écosystème digital</li>
@@ -312,7 +313,7 @@ export default function EquipePage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-red-500 mb-2">❌ Ce que nous ne sommes pas</h4>
+                  <h4 className="font-bold text-red-500 mb-2">Ce que nous ne sommes pas</h4>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li>• Des &quot;marketeurs agressifs&quot;</li>
                     <li>• Des &quot;vendeurs de rêve&quot;</li>

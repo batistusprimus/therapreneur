@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { TargetIcon, BarChartIcon, SettingsIcon } from '@/components/Icons';
 import { listPosts } from '@/lib/outrank';
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default async function BlogIndexPage() {
                   <p className="text-sm text-gray-600">Documenté en temps réel</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-[#DCB253] mb-2">500+</div>
+                  <div className="text-3xl font-black text-[#DCB253] mb-2">300+</div>
                   <p className="text-sm text-gray-600">Transformations réussies</p>
                 </div>
                 <div>
@@ -65,25 +66,33 @@ export default async function BlogIndexPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-xl p-6 border border-[#DCB253]/20">
-              <div className="text-3xl mb-4">🎯</div>
+              <div className="mb-4 text-[#DCB253]">
+                <TargetIcon size={28} />
+              </div>
               <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">Stratégies</h3>
               <p className="text-sm text-gray-600">Positionnement, offres, scaling éthique</p>
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-xl p-6 border border-[#DCB253]/20">
-              <div className="text-3xl mb-4">📊</div>
+              <div className="mb-4 text-[#DCB253]">
+                <BarChartIcon size={28} />
+              </div>
               <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">Chiffres Réels</h3>
               <p className="text-sm text-gray-600">KPIs, revenus, conversions documentés</p>
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-xl p-6 border border-[#DCB253]/20">
-              <div className="text-3xl mb-4">🛠️</div>
+              <div className="mb-4 text-[#DCB253]">
+                <SettingsIcon size={28} />
+              </div>
               <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">Outils & Méthodes</h3>
               <p className="text-sm text-gray-600">Frameworks exclusifs, templates prêts</p>
             </div>
             
             <div className="bg-gradient-to-br from-[#DCB253]/10 to-[#DCB253]/5 rounded-xl p-6 border border-[#DCB253]/20">
-              <div className="text-3xl mb-4">📈</div>
+              <div className="mb-4 text-[#DCB253]">
+                <BarChartIcon size={28} />
+              </div>
               <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">Études de Cas</h3>
               <p className="text-sm text-gray-600">Transformations réelles, résultats prouvés</p>
             </div>
@@ -107,7 +116,9 @@ export default async function BlogIndexPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.length === 0 && (
               <div className="col-span-full text-center py-12">
-                <div className="text-6xl mb-4">📝</div>
+                <div className="text-6xl mb-4 text-[#DCB253]">
+                  <SettingsIcon size={36} />
+                </div>
                 <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">Articles en préparation</h3>
                 <p className="text-gray-600 mb-6">
                   Nous préparons du contenu exclusif avec une transparence totale 

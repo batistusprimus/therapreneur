@@ -20,7 +20,7 @@ export default function SiteFooter() {
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#DCB253]">500+</div>
+                <div className="text-2xl font-bold text-[#DCB253]">300+</div>
                 <div className="text-xs text-gray-400">Thérapeutes transformés</div>
               </div>
               <div className="text-center">
@@ -105,7 +105,7 @@ export default function SiteFooter() {
                   </a>
                 </p>
                 <p className="text-gray-300">
-                  <strong>Écosystème :</strong> 500+ thérapeutes transformés, empire digital éthique
+                  <strong>Écosystème :</strong> 300+ thérapeutes transformés, empire digital éthique
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function SiteFooter() {
               <h4 className="text-lg font-bold mb-4 text-[#DCB253]">Suivez-nous</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://www.linkedin.com/company/therapreneur" 
+                  href="https://www.linkedin.com/in/th%C3%A9o-gorbinkoff-aa70a8254/" 
                   className="w-10 h-10 bg-[#DCB253] rounded-lg flex items-center justify-center hover:bg-[#DCB253]/80 transition-colors"
                   aria-label="LinkedIn"
                 >
@@ -123,7 +123,7 @@ export default function SiteFooter() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.instagram.com/therapreneur" 
+                  href="https://www.instagram.com/theo_osteopathe/" 
                   className="w-10 h-10 bg-[#DCB253] rounded-lg flex items-center justify-center hover:bg-[#DCB253]/80 transition-colors"
                   aria-label="Instagram"
                 >
@@ -132,7 +132,7 @@ export default function SiteFooter() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.youtube.com/@therapreneur" 
+                  href="https://www.youtube.com/@theo.lifeofceo/videos" 
                   className="w-10 h-10 bg-[#DCB253] rounded-lg flex items-center justify-center hover:bg-[#DCB253]/80 transition-colors"
                   aria-label="YouTube"
                 >
