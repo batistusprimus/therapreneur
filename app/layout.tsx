@@ -23,8 +23,54 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Thérapreneur',
-  description: 'Plateforme d\'accompagnement pour thérapeutes entrepreneurs',
+  title: 'Thérapreneur | Transformez votre expertise thérapeutique en empire digital éthique',
+  description: 'Découvrez comment passer de thérapeute épuisé à expert digital reconnu. Nous transformons votre cabinet en écosystème scalable tout en préservant vos valeurs humaines. De 0 à 150k€/mois documenté en temps réel.',
+  keywords: 'thérapeute entrepreneur, transformation digitale thérapie, scaling cabinet thérapeutique, offre high-ticket thérapeute, marketing éthique santé, business thérapeute en ligne',
+  authors: [{ name: 'Thérapreneur' }],
+  creator: 'Thérapreneur',
+  publisher: 'Thérapreneur',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://therapreneur.fr'),
+  alternates: {
+    canonical: 'https://therapreneur.fr',
+  },
+  openGraph: {
+    title: 'Thérapreneur | L\'écosystème de transformation digitale thérapeutique',
+    description: 'L\'intérieur d\'un business qui est passé de 0 à 150k€/mois en 12 mois. Transparence totale sur les stratégies pour thérapeutes entrepreneurs.',
+    url: 'https://therapreneur.fr',
+    siteName: 'Thérapreneur',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Thérapreneur - Transformation digitale pour thérapeutes',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Thérapreneur | Transformez votre expertise thérapeutique',
+    description: 'De 0 à 150k€/mois documenté en temps réel. Méthodes testées pour thérapeutes entrepreneurs.',
+    images: ['/twitter-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
