@@ -252,14 +252,26 @@
   animation: progress 2s ease-out forwards;
 }
 
-/* Intersection observer classes */
+/* Intersection observer classes - Version qui affiche le contenu par défaut */
 .fade-in-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Version alternative pour les animations contrôlées */
+.fade-in-hidden {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease-out;
 }
 
-.fade-in-section.is-visible {
+.fade-in-hidden.is-visible {
   opacity: 1;
   transform: translateY(0);
 }

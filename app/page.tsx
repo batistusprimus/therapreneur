@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import AnimatedSection from './components/AnimatedSection';
 import { 
   TrendingUpIcon, 
   TargetIcon, 
@@ -73,20 +74,17 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
-                <a 
-                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group btn-modern bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all shadow-xl hover-lift flex items-center gap-2"
-                >
-                  🎯 Accéder à la Méthode POV Gratuite
-                  <span className="animate-pulse">🆓</span>
-                </a>
                 <Link 
                   href="/services" 
+                  className="button-gradient text-white px-8 py-4 rounded-xl font-bold text-lg shadow-md"
+                >
+                  Réserver un audit offert
+                </Link>
+                <Link 
+                  href="/savoir-faire" 
                   className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all hover-lift"
                 >
-                  Voir nos offres
+                  Découvrir notre savoir‑faire
                 </Link>
               </div>
 
@@ -167,7 +165,7 @@ export default function Home() {
       {/* Problème & Solution - Inspiré de la VSL */}
       <section className="py-24 bg-gradient-to-br from-red-50 to-white">
         <div className="container-custom">
-          <div className="text-center mb-16 fade-in-section">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
               Êtes-vous pris au piège du{' '}
               <span className="text-red-600">"succès apparent"</span> ?
@@ -175,10 +173,10 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Votre agenda est plein, mais vous êtes dans une prison dorée...
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <div className="space-y-8 fade-in-section">
+            <AnimatedSection className="space-y-8" animation="fade-in-left">
               <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
                 <h3 className="text-xl font-bold text-red-800 mb-4">❌ Les signes du piège :</h3>
                 <ul className="space-y-3 text-gray-700">
@@ -188,9 +186,9 @@ export default function Home() {
                   <li>• Si vous tombez malade ou partez en vacances, vos revenus s'effondrent</li>
                 </ul>
               </div>
-            </div>
+            </AnimatedSection>
             
-            <div className="space-y-8 fade-in-section">
+            <AnimatedSection className="space-y-8" animation="fade-in-right">
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                 <h3 className="text-xl font-bold text-green-800 mb-4">✅ La solution POV :</h3>
                 <ul className="space-y-3 text-gray-700">
@@ -621,38 +619,34 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mt-12">
-              <h3 className="text-2xl font-bold text-white mb-6">⚠️ La Question Finale :</h3>
+                <div className="bg-white/10 rounded-2xl p-8 border border-white/20 mt-12">
+              <h3 className="text-2xl font-bold text-white mb-6">Prêt à structurer votre croissance ?</h3>
               <p className="text-xl text-white mb-8">
-                <strong>Serez-vous prêt à attendre 3 ans ou 5 ans ce que vous pourriez obtenir en quelques mois ?</strong>
+                Audit offert de votre écosystème actuel et plan d’action d’agence.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
-                <a 
-                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-modern bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover-lift flex items-center justify-center gap-2"
-                >
-                  🎯 Méthode POV Gratuite
-                  <span className="animate-pulse">🆓</span>
-                </a>
                 <Link 
                   href="/services" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#DCB253] transition-all hover-lift"
+                  className="btn-modern bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover-lift flex items-center justify-center gap-2"
                 >
                   Réserver un audit offert
+                </Link>
+                <Link 
+                  href="/savoir-faire" 
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#DCB253] transition-all hover-lift"
+                >
+                  Voir notre approche
                 </Link>
               </div>
               
               <p className="text-sm text-white/80 mt-6 max-w-3xl mx-auto">
-                <strong>Garantie de résultats :</strong> Avec l'aide d'un avocat, nous avons rédigé un contrat 
-                qui garantit de vous accompagner jusqu'à obtention de vos résultats. Le risque est de notre côté.
+                <strong>Engagement d’agence :</strong> accompagnement jusqu’aux résultats définis ensemble.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
       {/* Schema.org JSON-LD */}
       <script

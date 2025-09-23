@@ -5,7 +5,7 @@ import './globals.css'
 import './styles/animations.css'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
-import POVBanner from './components/POVBanner'
+import ScrollReveal from './components/ScrollReveal'
 
 const anton = Anton({ 
   weight: '400',
@@ -86,7 +86,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="pt-20">{children}</main>
         <SiteFooter />
-        <POVBanner />
+        <ScrollReveal />
       </body>
     </html>
   )
