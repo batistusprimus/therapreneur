@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import POVPopup from './POVPopup';
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPOVPopupOpen, setIsPOVPopupOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-[#DCB253]/20">
@@ -24,7 +26,15 @@ export default function SiteHeader() {
           <Link href="/equipe" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Équipe</Link>
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Blog</Link>
-          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#DCB253]/90 transition-all ml-2">Doubler mes revenus</Link>
+          <button 
+            onClick={() => setIsPOVPopupOpen(true)}
+            className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-4 py-2 rounded-lg font-bold text-sm hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all ml-2 shadow-lg hover:shadow-xl transform hover:scale-105 relative overflow-hidden"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              🎯 Méthode POV Gratuite
+              <span className="animate-pulse">🆓</span>
+            </span>
+          </button>
         </nav>
 
         <button 
@@ -51,9 +61,23 @@ export default function SiteHeader() {
           <Link href="/equipe" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Équipe</Link>
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Blog</Link>
-          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-3 rounded-lg font-bold text-center hover:bg-[#DCB253]/90 transition-all mx-4 mt-2" onClick={() => setIsMenuOpen(false)}>Doubler mes revenus</Link>
+          <button 
+            onClick={() => {
+              setIsPOVPopupOpen(true);
+              setIsMenuOpen(false);
+            }}
+            className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-4 py-3 rounded-lg font-bold text-center hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all mx-4 mt-2 shadow-lg"
+          >
+            🎯 Méthode POV Gratuite 🆓
+          </button>
         </nav>
       </div>
+
+      {/* Pop-up POV */}
+      <POVPopup 
+        isOpen={isPOVPopupOpen} 
+        onClose={() => setIsPOVPopupOpen(false)} 
+      />
     </header>
   );
 }

@@ -73,18 +73,20 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
+                <a 
+                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group btn-modern bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-[#DCB253]/90 hover:to-[#DCB253]/70 transition-all shadow-xl hover-lift flex items-center gap-2"
+                >
+                  🎯 Accéder à la Méthode POV Gratuite
+                  <span className="animate-pulse">🆓</span>
+                </a>
                 <Link 
                   href="/services" 
-                  className="group btn-modern bg-[#DCB253] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253]/90 transition-all shadow-xl hover-lift flex items-center gap-2"
+                  className="border-2 border-[#DCB253] text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#DCB253] hover:text-white transition-all hover-lift"
                 >
-                  Découvrir nos services
-                  <ArrowRightIcon className="group-hover:translate-x-1 transition-transform" size={20} />
-                </Link>
-                <Link 
-                  href="/blog" 
-                  className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold text-lg hover:border-[#DCB253] hover:text-[#DCB253] transition-all hover-lift"
-                >
-                  Voir nos résultats
+                  Voir nos offres
                 </Link>
               </div>
 
@@ -626,17 +628,20 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+                <a 
+                  href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-modern bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover-lift flex items-center justify-center gap-2"
+                >
+                  🎯 Méthode POV Gratuite
+                  <span className="animate-pulse">🆓</span>
+                </a>
                 <Link 
                   href="/services" 
-                  className="btn-modern bg-white text-[#DCB253] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover-lift"
-                >
-                  Réserver un audit offert de 45 min
-                </Link>
-                <Link 
-                  href="/masterclass" 
                   className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-[#DCB253] transition-all hover-lift"
                 >
-                  Voir la masterclass
+                  Réserver un audit offert
                 </Link>
               </div>
               

@@ -763,10 +763,21 @@ export default function MasterclassPage() {
                 <div className="text-sm">Revenus récurrents digitaux</div>
               </div>
             </div>
-            <p className="text-lg mt-4 max-w-3xl mx-auto">
+            <p className="text-lg mt-4 max-w-3xl mx-auto mb-6">
               <strong>Ce n'est pas du hasard ou de la chance, ce sont des compétences.</strong> 
               Cette masterclass vous donne le plan d'action exact de la méthode POV.
             </p>
+            <div className="text-center">
+              <a 
+                href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-[#DCB253] px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                🎯 Accéder à la Méthode POV Gratuite
+                <span className="animate-pulse">🆓</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

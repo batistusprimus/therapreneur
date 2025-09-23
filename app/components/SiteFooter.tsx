@@ -14,22 +14,22 @@ export default function SiteFooter() {
               <span className="text-2xl font-black">Thérapreneur</span>
             </div>
             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-              <strong className="text-[#DCB253]">La méthode POV qui double vos revenus en 90 jours.</strong><br />
-              Nous aidons les thérapeutes à créer 5k€ à 15k€ de revenus récurrents par mois 
-              grâce au digital, sans prendre un patient supplémentaire.
+              <strong className="text-[#DCB253]">L'écosystème de transformation digitale thérapeutique.</strong><br />
+              Nous transformons votre expertise thérapeutique en empire digital éthique, 
+              sans jamais trahir vos valeurs humaines.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#DCB253]">300+</div>
-                <div className="text-xs text-gray-400">Thérapeutes aidés</div>
+                <div className="text-2xl font-bold text-[#DCB253]">500+</div>
+                <div className="text-xs text-gray-400">Thérapeutes transformés</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#DCB253]">15k€/mois</div>
-                <div className="text-xs text-gray-400">Revenus récurrents</div>
+                <div className="text-2xl font-bold text-[#DCB253]">150k€+</div>
+                <div className="text-xs text-gray-400">CA mensuel clients</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#DCB253]">90j</div>
-                <div className="text-xs text-gray-400">Transformation</div>
+                <div className="text-xs text-gray-400">Écosystème complet</div>
               </div>
             </div>
           </div>
@@ -66,26 +66,26 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Formules */}
+          {/* Services Thérapreneur */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-[#DCB253]">Nos Formules POV</h4>
+            <h4 className="text-lg font-bold mb-6 text-[#DCB253]">L'Écosystème Thérapreneur</h4>
             <ul className="space-y-3">
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">Autonomie</strong> - Formation guidée
-                  <div className="text-sm text-[#DCB253]">997€</div>
+                  <strong className="text-white">DIY</strong> - L'Autonomie Guidée
+                  <div className="text-sm text-[#DCB253]">5.000€</div>
                 </div>
               </li>
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">Co-Création</strong> - Accompagnement
-                  <div className="text-sm text-[#DCB253]">1 997€</div>
+                  <strong className="text-white">DWY</strong> - La Co-Création
+                  <div className="text-sm text-[#DCB253]">10.500€</div>
                 </div>
               </li>
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">Fait Pour Vous</strong> - Clé en main
-                  <div className="text-sm text-[#DCB253]">4 997€</div>
+                  <strong className="text-white">DFY</strong> - Transformation Clé en Main
+                  <div className="text-sm text-[#DCB253]">21.000€</div>
                 </div>
               </li>
             </ul>
@@ -100,12 +100,12 @@ export default function SiteFooter() {
               <div className="space-y-2">
                 <p className="text-gray-300">
                   <strong>Email :</strong> 
-                  <a href="mailto:contact@therapreneur.fr" className="text-[#DCB253] hover:underline ml-2">
-                    contact@therapreneur.fr
+                  <a href="mailto:remi@therapreneur.eu" className="text-[#DCB253] hover:underline ml-2">
+                    remi@therapreneur.eu
                   </a>
                 </p>
                 <p className="text-gray-300">
-                  <strong>Méthode POV :</strong> 300+ thérapeutes ont doublé leurs revenus en 90 jours
+                  <strong>Écosystème :</strong> 500+ thérapeutes transformés, empire digital éthique
                 </p>
               </div>
             </div>
@@ -168,10 +168,10 @@ export default function SiteFooter() {
         {/* Manifesto */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <blockquote className="text-lg text-gray-300 italic">
-            &quot;Doubler vos revenus en 90 jours sans prendre un patient supplémentaire.&quot;
+            &quot;Ensemble, créons le futur éthique de la thérapie digitale.&quot;
           </blockquote>
           <p className="text-[#DCB253] font-bold mt-2">
-            La méthode POV qui transforme 1€ de temps en 10€ de revenus digitaux.
+            Par des thérapeutes, pour des thérapeutes, avec une éthique inébranlable.
           </p>
         </div>
       </div>
