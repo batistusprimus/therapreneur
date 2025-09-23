@@ -160,99 +160,91 @@ export default function EquipePage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Fondateur 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* CEO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
                 <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👨‍⚕️</span>
+                  <span className="text-3xl">🧭</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Jean-Rémi Tomasini</h3>
-                <p className="text-gray-300">Co-Fondateur & Stratégiste</p>
+                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Théo Gorbinkoff</h3>
+                <p className="text-gray-300">CEO & Co-Fondateur</p>
               </div>
-              
               <div className="space-y-4 text-gray-300">
                 <p className="text-sm">
-                  <strong>Parcours :</strong> Thérapeute holistique devenu entrepreneur digital. 
-                  Expert en transformation de cabinets thérapeutiques.
+                  <strong>Parcours :</strong> Thérapeute et entrepreneur, passionné par la stratégie et le produit.
                 </p>
                 <p className="text-sm">
-                  <strong>Spécialité :</strong> Positionnement unique, création d&apos;offres high-ticket, 
-                  stratégie de scaling éthique.
+                  <strong>Spécialité :</strong> Vision, positionnement, offre et croissance durable.
                 </p>
                 <p className="text-sm">
-                  <strong>Mission :</strong> Aider les thérapeutes à valoriser leur expertise 
-                  sans perdre leur essence thérapeutique.
-                </p>
-              </div>
-              
-              <div className="mt-6 pt-6 border-t border-[#DCB253]/30">
-                <p className="text-xs text-gray-400 italic">
-                  &quot;Chaque thérapeute possède une méthode unique qui mérite de rayonner.&quot;
+                  <strong>Mission :</strong> Conjuguer impact thérapeutique et excellence business.
                 </p>
               </div>
             </div>
 
-            {/* Fondateur 2 */}
+            {/* COO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
                 <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👩‍💼</span>
+                  <span className="text-3xl">⚙️</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Marie Dubois</h3>
-                <p className="text-gray-300">Co-Fondatrice & Experte Marketing</p>
+                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Rémi Bouder</h3>
+                <p className="text-gray-300">COO & Co-Fondateur</p>
               </div>
-              
               <div className="space-y-4 text-gray-300">
                 <p className="text-sm">
-                  <strong>Parcours :</strong> Ancienne cadre marketing reconvertie à l&apos;accompagnement 
-                  de thérapeutes. Spécialiste du marketing éthique.
+                  <strong>Parcours :</strong> Opérations et delivery, structuration d&apos;équipes et de process.
                 </p>
                 <p className="text-sm">
-                  <strong>Spécialité :</strong> Marketing de contenu, automation respectueuse, 
-                  conversion alignée avec les valeurs thérapeutiques.
+                  <strong>Spécialité :</strong> Qualité, systèmes, optimisation et exécution.
                 </p>
                 <p className="text-sm">
-                  <strong>Mission :</strong> Démontrer que marketing et éthique peuvent 
-                  coexister harmonieusement.
-                </p>
-              </div>
-              
-              <div className="mt-6 pt-6 border-t border-[#DCB253]/30">
-                <p className="text-xs text-gray-400 italic">
-                  &quot;L&apos;authenticité est le meilleur des arguments de vente.&quot;
+                  <strong>Mission :</strong> Rendre la croissance fluide, prévisible et scalable.
                 </p>
               </div>
             </div>
 
-            {/* Expert Technique */}
+            {/* CMO */}
             <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
               <div className="text-center mb-6">
                 <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👨‍💻</span>
+                  <span className="text-3xl">📣</span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Alexandre Martin</h3>
-                <p className="text-gray-300">Expert Technique & Automation</p>
+                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Baptiste Piocelle</h3>
+                <p className="text-gray-300">CMO & Co-Fondateur</p>
               </div>
-              
               <div className="space-y-4 text-gray-300">
                 <p className="text-sm">
-                  <strong>Parcours :</strong> Développeur full-stack spécialisé dans les solutions 
-                  pour professionnels de santé et du bien-être.
+                  <strong>Parcours :</strong> Marketing de croissance et marque, de l&apos;audience à la conversion.
                 </p>
                 <p className="text-sm">
-                  <strong>Spécialité :</strong> Écosystèmes digitaux, tunnels de conversion, 
-                  automation marketing et CRM thérapeutique.
+                  <strong>Spécialité :</strong> Contenu, acquisition organique, offres et persuasion éthique.
                 </p>
                 <p className="text-sm">
-                  <strong>Mission :</strong> Rendre la technologie accessible et au service 
-                  de la relation thérapeutique.
+                  <strong>Mission :</strong> Amplifier des messages vrais qui transforment durablement.
                 </p>
               </div>
-              
-              <div className="mt-6 pt-6 border-t border-[#DCB253]/30">
-                <p className="text-xs text-gray-400 italic">
-                  &quot;La technologie doit simplifier, pas complexifier.&quot;
+            </div>
+
+            {/* CSM */}
+            <div className="bg-gradient-to-br from-[#DCB253]/20 to-[#DCB253]/10 rounded-2xl p-8 border border-[#DCB253]/30">
+              <div className="text-center mb-6">
+                <div className="w-24 h-24 bg-[#DCB253] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🤝</span>
+                </div>
+                <h3 className="text-2xl font-bold text-[#DCB253] mb-2">Olivier Martin</h3>
+                <p className="text-gray-300">CSM</p>
+              </div>
+              <div className="space-y-4 text-gray-300">
+                <p className="text-sm">
+                  <strong>Parcours :</strong> Relation client et accompagnement, obsédé par la réussite utilisateur.
+                </p>
+                <p className="text-sm">
+                  <strong>Spécialité :</strong> Onboarding, rétention, feedback et succès mesuré.
+                </p>
+                <p className="text-sm">
+                  <strong>Mission :</strong> Maximiser l&apos;impact réel chez chaque thérapeute accompagné.
                 </p>
               </div>
             </div>
@@ -375,21 +367,27 @@ export default function EquipePage() {
             "employee": [
               {
                 "@type": "Person",
-                "name": "Jean-Rémi Tomasini",
-                "jobTitle": "Co-Fondateur & Stratégiste",
-                "description": "Expert en transformation de cabinets thérapeutiques"
+                "name": "Théo Gorbinkoff",
+                "jobTitle": "CEO & Co-Fondateur",
+                "description": "Thérapeute et entrepreneur, stratégie et vision produit"
               },
               {
                 "@type": "Person",
-                "name": "Marie Dubois",
-                "jobTitle": "Co-Fondatrice & Experte Marketing",
-                "description": "Spécialiste du marketing éthique pour thérapeutes"
+                "name": "Rémi Bouder",
+                "jobTitle": "COO & Co-Fondateur",
+                "description": "Opérations, qualité et scalabilité des process"
               },
               {
                 "@type": "Person",
-                "name": "Alexandre Martin",
-                "jobTitle": "Expert Technique & Automation",
-                "description": "Développeur spécialisé solutions professionnels santé"
+                "name": "Baptiste Piocelle",
+                "jobTitle": "CMO & Co-Fondateur",
+                "description": "Marketing de croissance, contenu et acquisition éthique"
+              },
+              {
+                "@type": "Person",
+                "name": "Olivier Martin",
+                "jobTitle": "CSM",
+                "description": "Onboarding, rétention et succès client"
               }
             ],
             "values": [

@@ -24,7 +24,7 @@ export default function SiteHeader() {
           <Link href="/equipe" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Équipe</Link>
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Blog</Link>
-          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#DCB253]/90 transition-all ml-2">Démarrer</Link>
+          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#DCB253]/90 transition-all ml-2">Doubler mes revenus</Link>
         </nav>
 
         <button 
@@ -51,7 +51,7 @@ export default function SiteHeader() {
           <Link href="/equipe" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Équipe</Link>
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Blog</Link>
-          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-3 rounded-lg font-bold text-center hover:bg-[#DCB253]/90 transition-all mx-4 mt-2" onClick={() => setIsMenuOpen(false)}>Démarrer</Link>
+          <Link href="/services" className="bg-[#DCB253] text-[#1A1A1A] px-4 py-3 rounded-lg font-bold text-center hover:bg-[#DCB253]/90 transition-all mx-4 mt-2" onClick={() => setIsMenuOpen(false)}>Doubler mes revenus</Link>
         </nav>
       </div>
     </header>

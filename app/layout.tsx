@@ -2,6 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Anton, Archivo_Black, Montserrat } from 'next/font/google'
 import './globals.css'
+import './styles/animations.css'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 

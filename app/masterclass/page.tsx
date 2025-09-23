@@ -723,10 +723,10 @@ export default function MasterclassPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="text-2xl font-semibold text-accent">
-                Masterclass Thérapreneur
+                Masterclass Thérapreneur - Méthode POV
               </h1>
               <p className="text-gray-600 mt-1">
-                Transformez votre pratique thérapeutique en entreprise florissante
+                Comment 300+ thérapeutes ont doublé leurs revenus en 90 jours
               </p>
             </div>
             <button
@@ -741,6 +741,35 @@ export default function MasterclassPage() {
           </div>
         </div>
       </div>
+
+      {/* Banner d'urgence et résultats */}
+      <section className="bg-gradient-to-r from-[#DCB253] to-[#DCB253]/80 py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-white">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+              ⚠️ Plus vous attendez, plus ce sera difficile de se lancer
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-black">300+</div>
+                <div className="text-sm">Thérapeutes accompagnés</div>
+              </div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-black">90j</div>
+                <div className="text-sm">Pour doubler vos revenus</div>
+              </div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl font-black">15k€/mois</div>
+                <div className="text-sm">Revenus récurrents digitaux</div>
+              </div>
+            </div>
+            <p className="text-lg mt-4 max-w-3xl mx-auto">
+              <strong>Ce n'est pas du hasard ou de la chance, ce sont des compétences.</strong> 
+              Cette masterclass vous donne le plan d'action exact de la méthode POV.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Contenu principal avec cards */}
       <div className="container mx-auto px-4 pt-8 pb-8">

@@ -14,22 +14,22 @@ export default function SiteFooter() {
               <span className="text-2xl font-black">Thérapreneur</span>
             </div>
             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-              <strong className="text-[#DCB253]">L&apos;écosystème de transformation digitale thérapeutique.</strong><br />
-              Nous transformons votre expertise thérapeutique en empire digital éthique, 
-              sans jamais trahir vos valeurs humaines.
+              <strong className="text-[#DCB253]">La méthode POV qui double vos revenus en 90 jours.</strong><br />
+              Nous aidons les thérapeutes à créer 5k€ à 15k€ de revenus récurrents par mois 
+              grâce au digital, sans prendre un patient supplémentaire.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#DCB253]">150k€+</div>
-                <div className="text-xs text-gray-400">CA mensuel documenté</div>
+                <div className="text-2xl font-bold text-[#DCB253]">300+</div>
+                <div className="text-xs text-gray-400">Thérapeutes aidés</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#DCB253]">500+</div>
-                <div className="text-xs text-gray-400">Thérapeutes transformés</div>
+                <div className="text-2xl font-bold text-[#DCB253]">15k€/mois</div>
+                <div className="text-xs text-gray-400">Revenus récurrents</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#DCB253]">90j</div>
-                <div className="text-xs text-gray-400">Parcours de transformation</div>
+                <div className="text-xs text-gray-400">Transformation</div>
               </div>
             </div>
           </div>
@@ -66,26 +66,26 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Offres */}
+          {/* Formules */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-[#DCB253]">Nos Offres</h4>
+            <h4 className="text-lg font-bold mb-6 text-[#DCB253]">Nos Formules POV</h4>
             <ul className="space-y-3">
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">DIY</strong> - L&apos;Autonomie Guidée
-                  <div className="text-sm text-[#DCB253]">5.000€</div>
+                  <strong className="text-white">Autonomie</strong> - Formation guidée
+                  <div className="text-sm text-[#DCB253]">997€</div>
                 </div>
               </li>
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">DWY</strong> - La Co-Création
-                  <div className="text-sm text-[#DCB253]">10.500€</div>
+                  <strong className="text-white">Co-Création</strong> - Accompagnement
+                  <div className="text-sm text-[#DCB253]">1 997€</div>
                 </div>
               </li>
               <li>
                 <div className="text-gray-300">
-                  <strong className="text-white">DFY</strong> - Clé en Main
-                  <div className="text-sm text-[#DCB253]">21.000€</div>
+                  <strong className="text-white">Fait Pour Vous</strong> - Clé en main
+                  <div className="text-sm text-[#DCB253]">4 997€</div>
                 </div>
               </li>
             </ul>
@@ -105,7 +105,7 @@ export default function SiteFooter() {
                   </a>
                 </p>
                 <p className="text-gray-300">
-                  <strong>Transparence totale :</strong> Chiffres et stratégies en temps réel
+                  <strong>Méthode POV :</strong> 300+ thérapeutes ont doublé leurs revenus en 90 jours
                 </p>
               </div>
             </div>
@@ -168,10 +168,10 @@ export default function SiteFooter() {
         {/* Manifesto */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <blockquote className="text-lg text-gray-300 italic">
-            &quot;Ensemble, créons le futur éthique de la thérapie digitale.&quot;
+            &quot;Doubler vos revenus en 90 jours sans prendre un patient supplémentaire.&quot;
           </blockquote>
           <p className="text-[#DCB253] font-bold mt-2">
-            Par des thérapeutes, pour des thérapeutes, avec une éthique inébranlable.
+            La méthode POV qui transforme 1€ de temps en 10€ de revenus digitaux.
           </p>
         </div>
       </div>
