@@ -28,7 +28,7 @@ export default function SiteHeader() {
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors text-sm lg:text-base font-medium">Blog</Link>
           <a 
-            href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/"
+            href="https://tunnel.therapreneur.eu/plan/"
             target="_blank"
             rel="noopener noreferrer"
             className="button-gradient text-white px-4 py-2 rounded-lg font-bold text-sm ml-2 shadow-md"
@@ -65,7 +65,7 @@ export default function SiteHeader() {
           <Link href="/savoir-faire" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Savoir‑faire</Link>
           <Link href="/blog" className="text-[#1A1A1A] hover:text-[#DCB253] transition-colors py-3 px-4 hover:bg-[#DCB253]/5 rounded-lg font-medium" onClick={() => setIsMenuOpen(false)}>Blog</Link>
           <a 
-            href="https://www.boosttoncabinet.fr/68b2fde43c8c0a003cd695c0/" 
+            href="https://tunnel.therapreneur.eu/plan/" 
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}

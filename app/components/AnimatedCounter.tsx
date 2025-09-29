@@ -37,3 +37,4 @@ export default function AnimatedCounter({ end, duration = 1200, suffix = "", cla
 }
 
 
+
